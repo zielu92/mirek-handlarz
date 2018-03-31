@@ -32,14 +32,28 @@
     @if($cars)
         @foreach($cars->sortByDesc('id') as $car)
             <tr data-href='{{route('admin.cars.edit', $car->id)}}' class="clickable-row
-            @if($car->status()==1) table-light
-            @elseif($car->status()==2) table-info
-            @elseif($car->status()==3) table-success
-            @elseif($car->status()==4) table-warning
-            @elseif($car->status()==5) table-dark
-            @elseif($car->status()==6) table-danger
-            @else table-secondary
-            @endif
+            @switch($car->status())
+                @case(1)
+                    table-light
+                @break
+                @case(2)
+                    table-info
+                @break
+                @case(3)
+                    table-success
+                @break
+                @case(4)
+                    table-warning
+                @break
+                @case(5)
+                    table-dark
+                @break
+                @case(6)
+                    table-danger
+                @break
+                @default
+                    table-secondary
+                @endswitch
             ">
                 <td>{{$car->id}}</td>
                 <td>
