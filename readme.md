@@ -14,6 +14,7 @@ Funkcje CMS:
 <b>w db:seed znajdują się przykładowe marki oraz modele</b>
 <br>
 screenshots:
+  <img src="http://mzielinski.pl/portfolio/images/mirek/mirek7.png">
 ![alt text](http://mzielinski.pl/portfolio/images/mirek/mirek7.png)
 ![alt text](http://mzielinski.pl/portfolio/images/mirek/mirek1.png)
 ![alt text](http://mzielinski.pl/portfolio/images/mirek/mirek2.png)
