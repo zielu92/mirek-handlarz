@@ -13,5 +13,14 @@ Funkcje CMS:
 <br>
 <b>w db:seed znajdują się przykładowe marki oraz modele</b>
 <br>
-<br>
+screenshots:<br>
+<img src="http://mzielinski.pl/portfolio/images/mirek/mirek7.png">
+<img src="http://mzielinski.pl/portfolio/images/mirek/mirek1.png">
+<img src="http://mzielinski.pl/portfolio/images/mirek/mirek2.png">
+<img src="http://mzielinski.pl/portfolio/images/mirek/mirek3.png">
+<img src="http://mzielinski.pl/portfolio/images/mirek/mirek4.png">
+<img src="http://mzielinski.pl/portfolio/images/mirek/mirek5.png">
+<img src="http://mzielinski.pl/portfolio/images/mirek/mirek6.png">
+<br>  <br>
+Dzięki <a href="https://github.com/jakubthedeveloper">@jakubthedeveloper</a> za rady i porady :) <br><br>
 <i>EN:Mirek Handlarz is an cms based on Laravel, which helps to managment cars by car dealers. Script do not support english language yet</i>
