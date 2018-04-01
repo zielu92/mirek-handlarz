@@ -24,6 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return Auth::user()->isAdmin() ? redirect('admin.index') : view('home');
+        return Auth::user()->isAdmin() ? redirect('admin') : view('home');
     }
 }
