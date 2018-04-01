@@ -10,8 +10,9 @@ Funkcje CMS:
   <li>Wyświetlanie krytycznych rekordów np. jeśli pojazd został zakupiony ponad 30 dni temu a nadal nie został sprzedany</li>
 <ul>
 <br>
+	Po instalacji i wygeneraowaniu klucza należy zrobić db:seed, gdzie znajdują się przykładowe modele i marki.<br>
+	Pierwszy zarejestrowany użytkownik otrzymuje prawa administratora.
 <br>
-<b>w db:seed znajdują się przykładowe marki oraz modele</b>
 <br>
 screenshots:<br>
 <img src="http://mzielinski.pl/portfolio/images/mirek/mirek7.png">
