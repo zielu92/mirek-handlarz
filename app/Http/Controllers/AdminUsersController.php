@@ -52,7 +52,7 @@ class AdminUsersController extends Controller
         }
 
         if($file = $request->file('photo')){
-            $data['photo_id'] = $photo->photoUpload($request->file('photo'), 'user_');
+            $data['photo_id'] = $photo->photoUpload($request->file('photo'), 'user_', '0');
         }
 
         User::create($data);
@@ -106,7 +106,7 @@ class AdminUsersController extends Controller
         }
 
         if($file = $request->file('photo')){
-            $data['photo_id'] = $photo->photoUpload($request->file('photo'), 'user_');
+            $data['photo_id'] = $photo->photoUpload($request->file('photo'), 'user_', '0');
         }
 
         $user->update($data);
