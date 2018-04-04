@@ -48,7 +48,7 @@
                       <th>id</th>
                       <th>Nazwa</th>
                       <th>Ilość modeli</th>
-                      <th>Trazakcje z tą marką</th>
+                      <th>Transakcje z tą marką</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -62,7 +62,7 @@
                               @endif
                           </td>
                           <td>@if($brand->model)
-                                {{ $brand->car->count()}}
+                                  {{ $brand->cars->count() }}
                               @endif
                           </td>
                       </tr>

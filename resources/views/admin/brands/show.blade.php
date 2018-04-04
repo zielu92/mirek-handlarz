@@ -9,7 +9,7 @@
             <th>id</th>
             <th>Nazwa</th>
             <th>Typ</th>
-            <th>Tranzakcje z tym modelem</th>
+            <th>Transakcje z tym modelem</th>
             <th>Akcje</th>
         </tr>
         </thead>

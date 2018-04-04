@@ -11,7 +11,6 @@ class Car extends Model
     protected $fillable = [
         'vin',
         'model_id',
-        'brand_id',
         'bought_price',
         'sold_price',
         'from',
@@ -29,13 +28,6 @@ class Car extends Model
      */
     public function model() {
       return $this->belongsTo('App\CarModel');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function brand() {
-        return $this->belongsTo('App\Brand');
     }
 
     /**
@@ -91,8 +83,6 @@ class Car extends Model
         if(isset($this->bought_date) && $this->bought_date<Carbon::now()->subDays(60)->toDateTimeString()){
             $status = 6;
         }
-
-
 
         return $status;
     }
