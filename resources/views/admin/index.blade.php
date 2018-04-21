@@ -10,7 +10,7 @@
                     <div class="card-body-icon">
                         <i class="fa fa-fw fa-truck"></i>
                     </div>
-                    <div class="mr-5"> {{$transports}} transport w tym tygodniu!</div>
+                    <div class="mr-5"> {{$transports}} transport w przeciągu 7 dni!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="{{route('admin.transport.index')}}">
                     <span class="float-left">Zobacz</span>
@@ -26,7 +26,7 @@
                     <div class="card-body-icon">
                         <i class="fa fa-fw fa-car"></i>
                     </div>
-                    <div class="mr-5">{{$carsBought}} zakupionych w tym tygodniu!</div>
+                    <div class="mr-5">{{$carsBought}} zakupionych w przeciągu 7 dni!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="{{route('admin.cars.index')}}">
                     <span class="float-left">Zobacz</span>
@@ -42,7 +42,7 @@
                     <div class="card-body-icon">
                         <i class="fa fa-fw fa-dollar"></i>
                     </div>
-                    <div class="mr-5">{{$carsSold}} sprzedanych w tym tygodniu!</div>
+                    <div class="mr-5">{{$carsSold}} sprzedanych w przeciągu 7 dni!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="{{route('admin.cars.index')}}">
                     <span class="float-left">Zobacz</span>
@@ -58,7 +58,7 @@
                     <div class="card-body-icon">
                         <i class="fa fa-fw fa-frown-o"></i>
                     </div>
-                    <div class="mr-5">{{$notSold}} niesprzedanych w tym tygodniu</div>
+                    <div class="mr-5">{{$notSold}} niesprzedanych w przeciągu 7 dni!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="{{route('admin.cars.index')}}">
                     <span class="float-left">Zobacz</span>
