@@ -230,13 +230,13 @@
                         Przybycie do magazynu
                     </h3>
                     <p class="timeline__item__content__description">
-                        @if(array_key_exists(0, $transport))
-                            @if($transport[0]->type==1 && $transport[0]->transport_date==$car->in_warehouse_date)
-                                Pojazd przywózł <b>{{$transport[0]->driver->name}}</b><br>
-                                Pojazdem o numerach rejestracyjnych <b>{{$transport[0]->plates}}</b>
-                            @else
-                                Brak informacji o transporcie
-                            @endif
+                        @if($transportIn)
+                            Pojazd przywózł <b>{{$transportIn[0]->driver->name}}</b><br>
+                            Pojazdem o numerach rejestracyjnych <b>{{$transportIn[0]->plates}}</b>
+                            <a href="{{route('admin.transport.show',$transportIn[0]->id)}}">
+                                Informację o transporcie</a>
+                        @else
+                            Brak informacji o transporcie
                         @endif
                     </p>
                 </div>
@@ -272,13 +272,13 @@
                         Pojazd opuścił magazyn
                     </h3>
                     <p class="timeline__item__content__description">
-                        @if(array_key_exists(1, $transport))
-                            @if($transport[1]->type==2 && $transport[1]->transport_date==$car->left_warehouse_date)
-                                Pojazd wywózł <b>{{$transport[1]->driver->name}}</b><br>
-                                Pojazdem o numerach rejestracyjnych <b>{{$transport[1]->plates}}</b>
-                            @else
-                               Brak informacji o transporcie
-                            @endif
+                        @if($transportOut)
+                            Pojazd przywózł <b>{{$transportOut[0]->driver->name}}</b><br>
+                            Pojazdem o numerach rejestracyjnych <b>{{$transportOut[0]->plates}}</b>
+                            <a href="{{route('admin.transport.show',$transportOut[0]->id)}}">
+                                Informację o transporcie</a>
+                        @else
+                            Brak informacji o transporcie
                         @endif
                     </p>
                 </div>

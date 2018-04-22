@@ -108,10 +108,18 @@ class AdminCarsController extends Controller
      */
     public function show($id)
     {
+        $car = Car::findOrFail($id);
+        $transportIn = Transport::where('transport', 'LIKE', '%'.$id.'%')->where('type', '=', '1')
+            ->where('transport_date', '=', $car->in_warehouse_date)->get();
+
+        $transportOut = Transport::where('transport', 'LIKE', '%'.$id.'%')->where('type', '=', '2')
+            ->where('transport_date', '=', $car->left_warehouse_date)->get();
+
         return view('admin.cars.show', [
-            'car' => Car::findOrFail($id),
+            'car' => $car,
             'pictures' => Photo::whereCar_id($id)->get(),
-            'transport' => Transport::where('transport', 'LIKE', '%'.$id.'%')->get()
+            'transportIn' => $transportIn,
+            'transportOut' => $transportOut
         ]);
     }
 

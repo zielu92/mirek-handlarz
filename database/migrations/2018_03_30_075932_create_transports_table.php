@@ -20,7 +20,7 @@ class CreateTransportsTable extends Migration
             $table->string('transport');
             $table->string('transport_date');
             $table->integer('type');
-            $table->string('extra');
+            $table->string('extra')->nullable();
             $table->timestamps();
         });
     }
