@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Brand;
-use App\CarModel;
+use App\Models\Brand;
+use App\Models\CarModel;
 use App\Http\Requests\BrandModelReqest;
 use Illuminate\Http\Request;
 

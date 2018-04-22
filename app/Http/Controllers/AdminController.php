@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Admin;
-use App\Car;
-use App\Transport;
+use App\Models\Admin;
+use App\Models\Car;
+use App\Models\Transport;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

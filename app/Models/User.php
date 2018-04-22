@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -27,6 +27,6 @@ class User extends Authenticatable
 }
 
     public function photo() {
-        return $this->belongsTo('App\Photo');
+        return $this->belongsTo('App\Models\Photo');
     }
 }

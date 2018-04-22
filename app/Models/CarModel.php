@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,14 +11,14 @@ class CarModel extends Model
     protected $fillable = ['brand_id','mode_code', 'model', 'type'];
 
     public function brand() {
-       return $this->hasOne('App\Brand', 'id', 'brand_id' );
+       return $this->hasOne('App\Models\Brand', 'id', 'brand_id' );
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function car() {
-        return $this->hasMany('App\Car', 'model_id');
+        return $this->hasMany('App\Models\Car', 'model_id');
     }
 
     public function getTypeAttribute() {

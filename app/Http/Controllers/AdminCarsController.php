@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Brand;
-use App\Car;
-use App\CarModel;
-use App\Customer;
+use App\Models\Brand;
+use App\Models\Car;
+use App\Models\CarModel;
+use App\Models\Customer;
 use App\Http\Requests\CarStoreRequest;
-use App\Photo;
-use App\Transport;
+use App\Models\Photo;
+use App\Models\Transport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -57,10 +57,10 @@ class AdminCarsController extends Controller
      * @return mixed
      */
     public function autocomplete(){
-        $term = Input::get('term');
+        $term = trim(Input::get('term'));
 
         $results = array();
-
+   
         $queries = DB::table('customers')
             ->where('name', 'LIKE', '%'.$term.'%')
             ->take(5)->get();

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Car;
-use App\Customer;
+use App\Models\Car;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 

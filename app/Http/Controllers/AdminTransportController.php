@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Car;
-use App\Driver;
+use App\Models\Car;
+use App\Models\Driver;
 use App\Http\Requests\TransportStoreRequest;
-use App\Transport;
+use App\Models\Transport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;

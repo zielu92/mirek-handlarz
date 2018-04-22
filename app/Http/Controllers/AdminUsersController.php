@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserEditRequest;
 use App\Http\Requests\UserStoreRequired;
-use App\Photo;
-use App\User;
+use App\Models\Photo;
+use App\Models\User;
 
 use Illuminate\Support\Facades\Session;
 

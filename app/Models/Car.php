@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -27,21 +27,21 @@ class Car extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function model() {
-      return $this->belongsTo('App\CarModel');
+      return $this->belongsTo('App\Models\CarModel');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function customer() {
-        return $this->belongsTo('App\Customer');
+        return $this->belongsTo('App\Models\Customer');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function transport() {
-        return $this->belongsTo('App\Transport');
+        return $this->belongsTo('App\Models\Transport');
     }
 
     /**
