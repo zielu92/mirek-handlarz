@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="row">
+<div class="row col-md-12">
     <div class="col-md-12">
         <h1>Edytuj użytkownika</h1>
     </div>
