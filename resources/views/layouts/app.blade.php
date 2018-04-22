@@ -66,6 +66,17 @@
                                 </div>
                             </li>
                         @endguest
+                        <li class="nav-item dropdown line">
+                            <form action="Language" method="post" id="langSwitcher">
+                                <div class="form-group">
+                                    <select name="locale" onchange='this.form.submit();' class="form-control LanglagueSwitcher">
+                                        <option value="en" {{ App::getLocale() == 'en' ? ' selected' : '' }}>English</option>
+                                        <option value="pl" {{ App::getLocale() == 'pl' ? ' selected' : '' }}>Polski</option>
+                                    </select>
+                                    {{csrf_field()}}
+                                </div>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>

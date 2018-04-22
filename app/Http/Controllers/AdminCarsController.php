@@ -111,7 +111,6 @@ class AdminCarsController extends Controller
         $car = Car::findOrFail($id);
         $transportIn = Transport::where('transport', 'LIKE', '%'.$id.'%')->where('type', '=', '1')
             ->where('transport_date', '=', $car->in_warehouse_date)->get();
-
         $transportOut = Transport::where('transport', 'LIKE', '%'.$id.'%')->where('type', '=', '2')
             ->where('transport_date', '=', $car->left_warehouse_date)->get();
 

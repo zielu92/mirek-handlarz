@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/Language', array(
+   'Middleware'=>'LanguageSwitch',
+   'uses'=>'LanguageController@index'
+    ));
+
 Auth::routes();
 
 Route::get('/logout', 'Auth\LoginController@logout');

@@ -39,6 +39,7 @@
                 position: absolute;
                 right: 10px;
                 top: 18px;
+                display: inherit;
             }
 
             .content {
@@ -62,6 +63,21 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            #langSwitcher {
+                margin-top:-5px;
+            }
+            .lang{
+                width: 100%;
+                padding: 5px 20px;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
         </style>
     </head>
     <body>
@@ -75,6 +91,15 @@
                         <a href="{{ route('login') }}">{{Lang::get('userForm.login')}}</a>
                         <a href="{{ route('register') }}">{{Lang::get('userForm.register')}}</a>
                     @endauth
+                        <form action="Language" method="post" id="langSwitcher">
+                            <div class="input-group">
+                                <select name="locale" onchange='this.form.submit();' class="">
+                                    <option value="en" {{ App::getLocale() == 'en' ? ' selected' : '' }}>English</option>
+                                    <option value="pl" {{ App::getLocale() == 'pl' ? ' selected' : '' }}>Polski</option>
+                                </select>
+                                {{csrf_field()}}
+                            </div>
+                        </form>
                 </div>
             @endif
 
