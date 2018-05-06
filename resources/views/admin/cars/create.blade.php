@@ -91,16 +91,20 @@
         $('.brand-list option').on('click', function() {
             var brand_id = $(this).val();
             $.ajax({
-
                 url: '/admin/cars/model/' + brand_id,
                 data: {
                     _method: 'GET',
                 },
                 type: "POST",
                 success: function (data) {
-
                     if (!data.error) {
-                        $("#model_id").html(data);
+                        var modelOfCar = JSON.parse(data);
+                        var output;
+                        for (var i in modelOfCar)
+                        {
+                            output += "<option value='" + modelOfCar[i].id + "'>"+ modelOfCar[i].model + "</option>";
+                        }
+                        $("#model_id").html(output);
                     }
 
                 }
