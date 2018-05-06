@@ -49,7 +49,6 @@ class AdminCarsController extends Controller
         $carmodels = CarModel::where('brand_id', '=', $id)->get();
         foreach ($carmodels as $carmodel) {
             $output[] = ["id" => $carmodel->id, "model" => $carmodel->model];
-           // echo "<option value=\"{$carmodel->id}\">{$carmodel->model}</option>";
         }
         echo json_encode($output);
 
