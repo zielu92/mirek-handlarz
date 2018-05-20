@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\Car;
 use App\Models\CarModel;
 use App\Http\Requests\BrandModelReqest;
 use Illuminate\Http\Request;
@@ -54,6 +55,14 @@ class AdminModelBrandController extends Controller
             'models'=>CarModel::whereBrand_id($id)->get(),
             'brand'=>Brand::whereId($id)->first()
         ]);
+    }
+
+    public function showModel($id)
+    {
+
+        return view('admin.brands.showModel', [
+            'cars'=>Car::whereModel_id($id)->paginate(25)
+            ]);
     }
 
     /**

@@ -86,12 +86,14 @@ Route::group(['middleware'=>'admin'], function() {
 
     Route::delete('admin/delete/media', 'AdminMediasController@deleteMedia');
 
+    Route::get('/admin/brand/showModel/{id}', 'AdminModelBrandController@showModel')->name('admin.brand.showModel');
+
     Route::resource('admin/brand', 'AdminModelBrandController', ['names'=>[
         'index'=>'admin.brand.index',
         'store'=>'admin.brand.store',
         'show'=>'admin.brand.show',
         'edit'=>'admin.brand.edit',
-        'update'=>'admin.brand.update'
+        'update'=>'admin.brand.update',
     ]]);
 
     Route::resource('admin/customer', 'AdminCustomerController', ['names'=>[

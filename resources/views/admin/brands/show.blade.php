@@ -20,7 +20,7 @@
                     <td>{{ $model->id }}</td>
                     <td>{{$model->model}}</td>
                     <td>{{$model->type}}</td>
-                    <td>{{$model->car->count()}}</td>
+                    <td><a href="{{route('admin.brand.showModel', $model->id)}}">{{$model->car->count()}}</a></td>
                     <td>
                         {!! Form::open(['method'=>'DELETE', 'action'=>['AdminModelBrandController@destroy',$model->id]]) !!}
 
