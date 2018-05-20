@@ -86,7 +86,7 @@ class AdminTransportController extends Controller
         $transport = Transport::findOrFail($id);
 
         $carsId['id'] = explode(",",$transport['transport']);
-        $cars = Car::findOrFail($carsId['id']);
+        $cars = Car::find($carsId['id']);
 
         return view('admin.transports.show', compact('cars', 'transport'));
     }

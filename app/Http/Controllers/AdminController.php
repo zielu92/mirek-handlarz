@@ -112,8 +112,10 @@ class AdminController extends Controller
         $term = $request->search;
 
 
-        $CustomersResult = Admin::searchResults('customers', $term, '/admin/customer/', Lang::get('search.typeCustomer').':');
-        $BrandsResults = Admin::searchResults('brands', $term, '/admin/brand/', Lang::get('search.typeModel').':');
+        $CustomersResult = Admin::searchResults('customers', $term, '/admin/customer/',
+            Lang::get('search.typeCustomer').':');
+        $BrandsResults = Admin::searchResults('brands', $term, '/admin/brand/',
+            Lang::get('search.typeModel').':');
         $Carsresults = [];
         $queries = DB::table('cars')
             ->where('vin', 'LIKE', '%'.$term.'%')
@@ -127,7 +129,8 @@ class AdminController extends Controller
             $Carsresults[] = [
                 'link' => '/admin/car/'.$query->id,
                 'id' => $query->id,
-                'value' => Lang::get('search.typCar').': #'.$query->id.' '.$car->model->brand->name.' '.$car->model->model.' ('.$query->vin.')'
+                'value' => Lang::get('search.typCar').': #'.$query->id.' '.$car->model->brand->name.' 
+                '.$car->model->model.' ('.$query->vin.')'
             ];
         }
 
