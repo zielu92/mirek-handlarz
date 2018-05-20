@@ -42,11 +42,17 @@
 <script>
     $(function()
     {
-        $( "#q" ).autocomplete({
-            source: "/admin/search/autocomplete",
+        $( "#searchForm" ).autocomplete({
+            source: "/admin/autocomplete",
+            messages: {
+                noResults: '',
+                results: function() {
+
+                }
+            },
             minLength: 2,
             select: function(event, ui) {
-                $('#q').val(ui.item.value);
+                window.location = ui.item.link;
             }
         });
     });

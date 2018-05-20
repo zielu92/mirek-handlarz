@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Response;
 
 class AdminController extends Controller
@@ -104,5 +105,65 @@ class AdminController extends Controller
 
     public function about() {
         return view('admin.about');
+    }
+
+    public function find(Request $request)
+    {
+        $term = $request->search;
+
+
+        $CustomersResult = Admin::searchResults('customers', $term, '/admin/customer/', Lang::get('search.typeCustomer').':');
+        $BrandsResults = Admin::searchResults('brands', $term, '/admin/brand/', Lang::get('search.typeModel').':');
+        $Carsresults = [];
+        $queries = DB::table('cars')
+            ->where('vin', 'LIKE', '%'.$term.'%')
+            ->orwhere('id', 'LIKE', '%'.$term.'%')
+            ->orwhere('bought_date', 'LIKE', '%'.$term.'%')
+            ->take(10)->get()->sortByDesc('id');
+
+        foreach ($queries as $query)
+        {
+            $car = Car::find($query->id);
+            $Carsresults[] = [
+                'link' => '/admin/car/'.$query->id,
+                'id' => $query->id,
+                'value' => Lang::get('search.typCar').': #'.$query->id.' '.$car->model->brand->name.' '.$car->model->model.' ('.$query->vin.')'
+            ];
+        }
+
+        $results = array_merge($CustomersResult, $BrandsResults, $Carsresults);
+
+        $articles =  $results;
+
+        return view('admin.searchResults', compact('articles', 'query'));
+    }
+
+    public function autocomplete(){
+        $term = trim(Input::get('term'));
+
+        $CustomersResult = Admin::searchResults('customers', $term, '/admin/customer/',
+            Lang::get('search.typeCustomer').':');
+        $BrandsResults = Admin::searchResults('brands', $term, '/admin/brand/',
+            Lang::get('search.typeModel').':');
+        $Carsresults = [];
+        $queries = DB::table('cars')
+            ->where('vin', 'LIKE', '%'.$term.'%')
+            ->orwhere('id', 'LIKE', '%'.$term.'%')
+            ->orwhere('bought_date', 'LIKE', '%'.$term.'%')
+            ->take(10)->get()->sortByDesc('id');
+
+        foreach ($queries as $query)
+        {
+            $car = Car::find($query->id);
+            $Carsresults[] = [
+                'link' => '/admin/car/'.$query->id,
+                'id' => $query->id,
+                'value' => Lang::get('search.typeCar').': #'.$query->id.' '.$car->model->brand->name.' '.$car->model->model.' ('.$query->vin.')'
+            ];
+        }
+
+        $results = array_merge($CustomersResult, $BrandsResults, $Carsresults);
+
+        return  json_encode($results);
     }
 }

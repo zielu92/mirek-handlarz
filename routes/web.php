@@ -30,8 +30,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware'=>'admin'], function() {
 
     Route::get('/admin', 'AdminController@index')->name('admin');
+
     Route::get('/admin/about', 'AdminController@about')->name('admin.about');
-    Route::get('admin/search/autocomplete', 'AdminController@search');
+
+    Route::get('/admin/search', 'AdminController@find')->name('admin.find');
+
+    Route::get('/admin/autocomplete', 'AdminController@autocomplete');
 
     Route::resource('admin/users', 'AdminUsersController', ['names'=>[
         'index'=>'admin.users.index',

@@ -231,12 +231,12 @@
                         Przybycie do magazynu
                     </h3>
                     <p class="timeline__item__content__description">
-                        @if($transportIn)
+                        @if(!empty($transportIn)and($transportIn!='[]'))
                             Pojazd przywózł <b>{{$transportIn[0]->driver->name}}</b><br>
                             Pojazdem o numerach rejestracyjnych <b>{{$transportIn[0]->plates}}</b>
                             Uwagi: <b>{{$transportIn[0]->extra ? $transportIn[0]->extra : 'brak'}}</b><br>
                             <a href="{{route('admin.transport.show',$transportIn[0]->id)}}">
-                            Informację o transporcie</a>
+                                Informację o transporcie</a>
                         @else
                             Brak informacji o transporcie
                         @endif
@@ -274,7 +274,7 @@
                         Pojazd opuścił magazyn
                     </h3>
                     <p class="timeline__item__content__description">
-                        @if($transportOut)
+                        @if(!empty($transportOut)and($transportOut!='[]'))
                             Pojazd przywózł <b>{{$transportOut[0]->driver->name}}</b><br>
                             Pojazdem o numerach rejestracyjnych <b>{{$transportOut[0]->plates}}</b>
                             Uwagi: <b>{{$transportOut[0]->extra ? $transportOut[0]->extra : 'brak'}}</b><br>

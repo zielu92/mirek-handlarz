@@ -488,5 +488,11 @@ footer.sticky-footer {
   font-weight: bold;
   top:10px;
   padding: 5px;
-  background-color: white;
+  background-color: #e5eef8;
+  border-radius: 4px;
+  z-index: 99999;
+}
+
+.results {
+  padding:5px;
 }

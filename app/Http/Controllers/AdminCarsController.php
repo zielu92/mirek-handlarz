@@ -50,7 +50,7 @@ class AdminCarsController extends Controller
         foreach ($carmodels as $carmodel) {
             $output[] = ["id" => $carmodel->id, "model" => $carmodel->model];
         }
-        echo json_encode($output);
+        return json_encode($output);
 
     }
 
@@ -168,6 +168,7 @@ class AdminCarsController extends Controller
             else {
                 return redirect('admin/cars');
             }
+
         }
     }
 

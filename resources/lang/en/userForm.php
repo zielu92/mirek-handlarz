@@ -26,5 +26,8 @@ return [
     'resetPassword' => 'Reset password',
     'sendResetLink' => 'Send Password Reset Link',
 
-    'youAreLogin' => 'You are login!'
+    'youAreLogin' => 'You are login!',
+
+    'search' => 'search',
+    'searchPlacehold' => 'What are you looking for?'
 ];

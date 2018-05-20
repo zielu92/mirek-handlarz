@@ -165,18 +165,19 @@
                     {{--<a class="dropdown-item small" href="#">View all alerts</a>--}}
                 {{--</div>--}}
             {{--</li>--}}
- <!--            <li class="nav-item">
-                {!! Form::open(['method'=>'POST', 'class'=>'form-inline my-2 my-lg-0 mr-lg-2']) !!}
-                    <div class="input-group">
-                        {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Wyszukaj', 'class'=>'form-control'])}}
-                        <span class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                {{ Form::close() }}
-            </li> -->
+           <li class="nav-item">
+               {{ Form::close() }}
+
+               {!! Form::open(['method'=>'GET','url'=>'admin/search', 'class'=>'form-inline my-2 my-lg-0 mr-lg-2']) !!}
+               {!! Form::text('search', null, ['required',
+                                           'id'=>'searchForm',
+                                           'class'=>'form-control',
+                                           'placeholder'=>Lang::get('search.searchPlacehold')]) !!}
+               {!! Form::submit(Lang::get('search.search'),
+                                          ['class'=>'btn btn-primary']) !!}
+               {!! Form::close() !!}
+
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/logout') }}">
                 <i class="fa fa-fw fa-sign-out"></i>{{Lang::get('userForm.logout')}}</a>

@@ -26,5 +26,5 @@ return [
     'resetPassword' => 'Zrestartuj hasło',
     'sendResetLink' => 'Wyślij link resetujący hasło',
 
-    'youAreLogin' => 'Jesteś zalogowany!'
+    'youAreLogin' => 'Jesteś zalogowany!',
 ];
