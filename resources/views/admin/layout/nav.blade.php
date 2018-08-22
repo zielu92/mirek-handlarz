@@ -1,80 +1,86 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="{{route('admin')}}">Panel admina</a>
+    <a class="navbar-brand" href="{{route('admin')}}">{{Lang::get('admin/nav.PA')}}</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{Lang::get('admin/nav.Dashboard')}}">
                 <a class="nav-link" href="{{route('admin')}}">
                     <i class="fa fa-fw fa-dashboard"></i>
-                    <span class="nav-link-text">Dashboard</span>
+                    <span class="nav-link-text">{{Lang::get('admin/nav.Dashboard')}}</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Użytkownicy">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{Lang::get('admin/nav.users')}}">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsers">
                     <i class="fa fa-fw fa-users"></i>
-                    <span class="nav-link-text">Użytkownicy</span>
+                    <span class="nav-link-text">{{Lang::get('admin/nav.users')}}</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseUsers">
                     <li>
-                        <a href="{{route('admin.users.index')}}">Lista użytkowników</a>
+                        <a href="{{route('admin.users.index')}}">{{Lang::get('admin/nav.usersList')}}</a>
                     </li>
                     <li>
-                        <a href="{{route('admin.users.create')}}">Stwórz nowego użytkownika</a>
+                        <a href="{{route('admin.users.create')}}">{{Lang::get('admin/nav.userCreate')}}</a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pojazdy">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{Lang::get('admin/nav.vehicles')}}">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCars">
                     <i class="fa fa-fw fa-car"></i>
-                    <span class="nav-link-text">Pojazdy</span>
+                    <span class="nav-link-text">{{Lang::get('admin/nav.vehicles')}}</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseCars">
                     <li>
-                        <a href="{{route('admin.cars.index')}}">Lista pojazdów</a>
+                        <a href="{{route('admin.cars.index')}}">{{Lang::get('admin/nav.vehiclesList')}}</a>
                     </li>
                     <li>
-                        <a href="{{route('admin.cars.create')}}">Dodaj nowy pojazd</a>
+                        <a href="{{route('admin.cars.create')}}">{{Lang::get('admin/nav.vehicleCreate')}}</a>
                     </li>
                     <li>
-                        <a href="{{route('admin.brand.index')}}">Marki i modele</a>
+                        <a href="{{route('admin.brand.index')}}">{{Lang::get('admin/nav.modelBrands')}}</a>
                     </li>
                 </ul>
             </li>
 
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Transporty">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{Lang::get('admin/nav.transports')}}">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseTransports">
                     <i class="fa fa-fw fa-truck"></i>
-                    <span class="nav-link-text">Transporty</span>
+                    <span class="nav-link-text">{{Lang::get('admin/nav.transports')}}</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseTransports">
                     <li>
-                        <a href="{{route('admin.transport.index')}}">Lista transportów</a>
+                        <a href="{{route('admin.transport.index')}}">{{Lang::get('admin/nav.transportsList')}}</a>
                     </li>
                     <li>
-                        <a href="{{route('admin.drivers.index')}}">Lista Kierowców</a>
+                        <a href="{{route('admin.drivers.index')}}">{{Lang::get('admin/nav.driversList')}}</a>
                     </li>
                 </ul>
             </li>
 
 
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Media">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{Lang::get('admin/nav.media')}}">
                 <a class="nav-link" href="{{route('admin.media.index')}}">
                     <i class="fa fa-fw fa-picture-o"></i>
-                    <span class="nav-link-text">Media</span>
+                    <span class="nav-link-text">{{Lang::get('admin/nav.media')}}</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Klienci">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{Lang::get('admin/nav.customers')}}">
                 <a class="nav-link" href="{{route('admin.customer.index')}}">
                     <i class="fa fa-fw fa-user-circle"></i>
-                    <span class="nav-link-text">Klienci</span>
+                    <span class="nav-link-text">{{Lang::get('admin/nav.customers')}}</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="O mirku handlarzu">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{Lang::get('admin/nav.options')}}">
+                <a class="nav-link" href="{{route('admin.options.index')}}">
+                    <i class="fa fa-fw fa-wrench"></i>
+                    <span class="nav-link-text">{{Lang::get('admin/nav.options')}}</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{Lang::get('admin/nav.about')}}">
                 <a class="nav-link" href="{{route('admin.about')}}">
                     <i class="fa fa-fw fa-info"></i>
-                    <span class="nav-link-text">o mirku handlarzu</span>
+                    <span class="nav-link-text">{{Lang::get('admin/nav.about')}}</span>
                 </a>
             </li>
 
@@ -172,8 +178,8 @@
                {!! Form::text('search', null, ['required',
                                            'id'=>'searchForm',
                                            'class'=>'form-control',
-                                           'placeholder'=>Lang::get('search.searchPlacehold')]) !!}
-               {!! Form::submit(Lang::get('search.search'),
+                                           'placeholder'=>Lang::get('admin/search.searchPlacehold')]) !!}
+               {!! Form::submit(Lang::get('admin/search.search'),
                                           ['class'=>'btn btn-primary']) !!}
                {!! Form::close() !!}
 

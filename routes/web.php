@@ -103,4 +103,10 @@ Route::group(['middleware'=>'admin'], function() {
         'edit'=>'admin.customer.edit',
         'update'=>'admin.customer.update'
     ]]);
+
+    Route::resource('admin/options', 'AdminOptionsController', ['names'=>[
+        'index'=>'admin.options.index',
+        'store'=>'admin.options.store',
+        'edit'=>'admin.options.edit'
+    ]]);
 });
