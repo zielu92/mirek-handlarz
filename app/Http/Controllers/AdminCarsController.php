@@ -8,10 +8,12 @@ use App\Models\CarModel;
 use App\Models\Customer;
 use App\Http\Requests\CarStoreRequest;
 use App\Models\Photo;
+use App\Models\Options;
 use App\Models\Transport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
 
@@ -34,8 +36,14 @@ class AdminCarsController extends Controller
      */
     public function create()
     {
+        $otherCurrencies = explode(",", Options::get()->first()->otherCurrency);
+        $currencies = collect([['currency'=>Options::get()->first()->defaultCurrency]]);
+        for($j=0; $j<count($otherCurrencies); $j++) {
+            $currencies->push(['currency'=>$otherCurrencies[$j]]);
+        }
         return view('admin.cars.create', [
-            'brands'=> Brand::pluck('name', 'id')->all()
+            'brands'=> Brand::pluck('name', 'id')->all(),
+            'currencies' => $currencies->pluck('currency', 'currency')->all(),
         ]);
     }
 
@@ -93,7 +101,7 @@ class AdminCarsController extends Controller
         }
           $lastId = Car::create($data)->id;
 
-        Session::flash('msg', 'Dodano nowy rekord');
+        Session::flash('msg', Lang::get('admin/cars.addedRecord'));
         if($request->pics) {
             return redirect('admin/createCar/'.$lastId);
         }
@@ -181,7 +189,7 @@ class AdminCarsController extends Controller
     public function destroy($id)
     {
         Car::destroy($id);
-        Session::flash('msg', 'Skasowano rekord');
+        Session::flash('msg', Lang::get('admin/cars.deleteRecord'));
         return redirect('admin/cars/');
     }
 

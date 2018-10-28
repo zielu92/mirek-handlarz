@@ -209,13 +209,15 @@
                         <i class="fa fa-lg fa-shopping-cart"></i>
                     </div>
                     <h3 class="timeline__item__content__title">
-                        Zakupiono
+                        {{Lang::get('admin/cars.bought')}}
                     </h3>
                     <p class="timeline__item__content__description">
                         <b>{{$car->model->brand->name}}</b> {{$car->model->model}}<br>
-                        Od {{$car->from}} za cenę <b>{{$car->bought_price}}</b><br>
-                        VIN pojazdu: {{$car->vin}}<br>
-                        Uwagi: <b>{{$car->extra ? $car->extra : 'brak'}}</b>
+                        {{Lang::get('admin/cars.from')}} {{$car->from}} {{Lang::get('admin/cars.forPrice')}}
+                        <b>{{$car->bought_price}}</b><br>
+                        {{Lang::get('admin/cars.vin')}}: {{$car->vin}}<br>
+                        {{Lang::get('admin/cars.extraInfo')}}:
+                        <b>{{$car->extra ? $car->extra : Lang::get('admin/cars.none')}}</b>
                     </p>
                 </div>
             </div>
@@ -232,13 +234,14 @@
                     </h3>
                     <p class="timeline__item__content__description">
                         @if(!empty($transportIn)and($transportIn!='[]'))
-                            Pojazd przywózł <b>{{$transportIn[0]->driver->name}}</b><br>
-                            Pojazdem o numerach rejestracyjnych <b>{{$transportIn[0]->plates}}</b>
-                            Uwagi: <b>{{$transportIn[0]->extra ? $transportIn[0]->extra : 'brak'}}</b><br>
+                            {{Lang::get('admin/cars.driverBringInfo')}} <b>{{$transportIn[0]->driver->name}}</b><br>
+                            {{Lang::get('admin/cars.driverPlates')}} <b>{{$transportIn[0]->plates}}</b>
+                            {{Lang::get('admin/cars.extraInfo')}}:
+                            <b>{{$transportIn[0]->extra ? $transportIn[0]->extra : Lang::get('admin/cars.none')}}</b><br>
                             <a href="{{route('admin.transport.show',$transportIn[0]->id)}}">
-                                Informację o transporcie</a>
+                                {{Lang::get('admin/cars.infoTransport')}}</a>
                         @else
-                            Brak informacji o transporcie
+                            {{Lang::get('admin/cars.noInfoTransport')}}
                         @endif
                     </p>
                 </div>
@@ -252,10 +255,11 @@
                         <i class="fa fa-lg fa-dollar"></i>
                     </div>
                     <h3 class="timeline__item__content__title">
-                        Sprzedaż
+                        {{Lang::get('admin/cars.sale')}}
                     </h3>
                     <p class="timeline__item__content__description">
-                        Pojazd zakupił <b>{{$car->customer->name}}</b>, za cenę <b>{{$car->sold_price}}</b>
+                        {{Lang::get('admin/cars.vehicleBought')}} <b>{{$car->customer->name}}</b>,
+                        {{Lang::get('admin/cars.forPrice')}} <b>{{$car->sold_price}}</b>
                     </p>
                     <div class="timeline__item__content__techs">
                         <span class="icon icon--sketch"></span>
@@ -271,17 +275,17 @@
                         <i class="fa fa-lg fa-arrow-right"></i>
                     </div>
                     <h3 class="timeline__item__content__title">
-                        Pojazd opuścił magazyn
+                        {{Lang::get('admin/cars.vehicleLeftWare')}}
                     </h3>
                     <p class="timeline__item__content__description">
                         @if(!empty($transportOut)and($transportOut!='[]'))
-                            Pojazd przywózł <b>{{$transportOut[0]->driver->name}}</b><br>
-                            Pojazdem o numerach rejestracyjnych <b>{{$transportOut[0]->plates}}</b>
-                            Uwagi: <b>{{$transportOut[0]->extra ? $transportOut[0]->extra : 'brak'}}</b><br>
+                            {{Lang::get('admin/cars.driverLeftInfo')}} <b>{{$transportOut[0]->driver->name}}</b><br>
+                            {{Lang::get('admin/cars.driverPlates')}} <b>{{$transportOut[0]->plates}}</b>
+                            Uwagi: <b>{{$transportOut[0]->extra ? $transportOut[0]->extra : Lang::get('admin/cars.none')}}</b><br>
                             <a href="{{route('admin.transport.show',$transportOut[0]->id)}}">
-                            Informację o transporcie</a>
+                                {{Lang::get('admin/cars.infoTransport')}}</a>
                         @else
-                            Brak informacji o transporcie
+                            {{Lang::get('admin/cars.noInfoTransport')}}
                         @endif
                     </p>
                 </div>

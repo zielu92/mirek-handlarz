@@ -4,28 +4,32 @@
 @section('content')
 <div class="col-md-12">
     <div class="pull-left">
-        <h1>Pojazdy na stanie</h1>
-        <p>Kliknij w rekord aby edytować</p>
+        <h1>{{Lang::get('admin/cars.indexTitle')}}</h1>
+        <p>{{Lang::get('admin/cars.clickToEdit')}}</p>
     </div>
      <div class="pull-right">
-         <a href="{{route('admin.brand.index')}}" class="btn btn-success btn-lg addbtn">Dodaj Nową markę/model</a>
-         <a href="{{route('admin.cars.create')}}" class="btn btn-info btn-lg addbtn">Dodaj Nowy</a>
+         <a href="{{route('admin.cars.create')}}" class="btn btn-info btn-lg addbtn">
+             {{Lang::get('admin/cars.addNewCar')}}
+         </a>
+         <a href="{{route('admin.brand.index')}}" class="btn btn-success btn-lg addbtn">
+             {{Lang::get('admin/cars.addNewModel')}}
+         </a>
      </div>
 
      <table class="table table-sm">
          <thead class="thead-dark">
             <tr>
                 <th>#</th>
-                <th>Pojazd</th>
-                <th>VIN</th>
-                <th>Cena zakupu</th>
-                <th>Cena sprzedaży</th>
-                <th>Zakupiono</th>
-                <th>Sprzedano</th>
-                <th>Data zakupu</th>
-                <th>Data sprzedaży</th>
-                <th>Data przyjęcia</th>
-                <th>Data wydania</th>
+                <th>{{Lang::get('admin/cars.vehicle')}}</th>
+                <th>{{Lang::get('admin/cars.vin')}}</th>
+                <th>{{Lang::get('admin/cars.boughtPrice')}}</th>
+                <th>{{Lang::get('admin/cars.sellPrice')}}</th>
+                <th>{{Lang::get('admin/cars.bought')}}</th>
+                <th>{{Lang::get('admin/cars.sold')}}</th>
+                <th>{{Lang::get('admin/cars.boughtDate')}}</th>
+                <th>{{Lang::get('admin/cars.soldDate')}}</th>
+                <th>{{Lang::get('admin/cars.wareouseDate')}}</th>
+                <th>{{Lang::get('admin/cars.leaveDate')}}</th>
             </tr>
         </thead>
         <tbody>

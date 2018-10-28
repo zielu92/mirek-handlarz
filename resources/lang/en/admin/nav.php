@@ -18,7 +18,7 @@ return [
     'userCreate' => 'Create new user',
     'vehicles' => 'Vehicles',
     'vehiclesList' => 'Vehicles list',
-    'vehicleCreate' => 'Add new vehicle to data base',
+    'vehicleCreate' => 'Add new vehicle',
     'modelBrands' => 'Models and brands',
     'transports' => 'Transports',
     'transportsList' => 'List of transports',
@@ -27,4 +27,5 @@ return [
     'customers' => 'Customers',
     'about' => 'About Mirek Handlarz',
     'options' => 'Settings',
+    'rates' => 'Currency rates',
 ];

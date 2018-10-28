@@ -72,10 +72,18 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{Lang::get('admin/nav.options')}}">
-                <a class="nav-link" href="{{route('admin.options.index')}}">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseOptions">
                     <i class="fa fa-fw fa-wrench"></i>
                     <span class="nav-link-text">{{Lang::get('admin/nav.options')}}</span>
                 </a>
+                <ul class="sidenav-second-level collapse" id="collapseOptions">
+                    <li>
+                        <a href="{{route('admin.options.index')}}">{{Lang::get('admin/nav.options')}}</a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.rates.index')}}">{{Lang::get('admin/nav.rates')}}</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{Lang::get('admin/nav.about')}}">
                 <a class="nav-link" href="{{route('admin.about')}}">

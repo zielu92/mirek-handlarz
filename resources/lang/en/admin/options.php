@@ -13,9 +13,18 @@ return [
     */
     'options' => 'Settings',
     'defaultCurrrency' => 'Default currency',
+    'ratesOnline' => 'Check currency rates online',
+    'ratesOnlineYes' => 'Yes',
+    'ratesOnlineNo' => 'No',
+    'ratesOnlineManual' => 'Manual set values of currency rates',
     'otherCurrency' => 'Other main currencies (press ctrl, to select)',
     'choice' => 'Choice',
     'none' => 'None',
     'msgUpdated' => 'Settings has been updated',
     'save' => 'Save',
+    'msgSaved' => 'Your data has been saved',
+    'tryToGetRates' => 'Try to get rates automatically',
+    'tryToGetRatesInfo' => 'You can try to get rates from outside soruces, but it might take a while',
+    'lastRate' => 'Last value',
+    'noRatesInfo' => 'There is no currency rates to set. Click here to set it',
 ];

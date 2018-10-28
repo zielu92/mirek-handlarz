@@ -84,6 +84,8 @@ Route::group(['middleware'=>'admin'], function() {
 
     Route::get('admin/createCar/{id}', 'AdminMediasController@createCar');
 
+    Route::get('/admin/rates/getRate/{rate}', 'AdminRatesController@getRate');
+
     Route::delete('admin/delete/media', 'AdminMediasController@deleteMedia');
 
     Route::get('/admin/brand/showModel/{id}', 'AdminModelBrandController@showModel')->name('admin.brand.showModel');
@@ -109,4 +111,11 @@ Route::group(['middleware'=>'admin'], function() {
         'store'=>'admin.options.store',
         'edit'=>'admin.options.edit'
     ]]);
+
+    Route::resource('admin/rates', 'AdminRatesController', ['names'=>[
+        'index'=>'admin.rates.index',
+        'store'=>'admin.rates.store',
+        'edit'=>'admin.rates.edit'
+    ]]);
+
 });

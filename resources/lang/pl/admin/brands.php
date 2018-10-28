@@ -11,19 +11,19 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'modelsAndBrands' => 'Modele i marki',
-    'editing' => 'Edytujesz',
-    'choiceFromList' => 'Wybierz z listy lub',
-    'giveName' => 'podaj nazwę',
-    'model' => 'model',
-    'shortName' => 'skrócona nazwa',
-    'type' => 'typ',
-    'car' => 'Samochód',
-    'motorbike' => 'Motocykl',
-    'bike' => 'Rower',
+    'modelsAndBrands'     => 'Modele i marki',
+    'editing'             => 'Edytujesz',
+    'choiceFromList'      => 'Wybierz z listy lub',
+    'giveName'            => 'podaj nazwę',
+    'model'               => 'model',
+    'shortName'           => 'skrócona nazwa',
+    'type'                => 'typ',
+    'car'                 => 'Samochód',
+    'motorbike'           => 'Motocykl',
+    'bike'                => 'Rower',
     'agriculturalMachine' => 'Maszyna rolnicza',
-    'other' => 'Inne',
-    'edit' => 'Edytuj',
+    'other'               => 'Inne',
+    'edit'                => 'Edytuj',
     ''=>'',
 
 ];

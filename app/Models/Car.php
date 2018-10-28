@@ -20,7 +20,9 @@ class Car extends Model
         'in_warehouse_date',
         'sold_date',
         'left_warehouse_date',
-        'extra'
+        'extra',
+        'sold_currency',
+        'bought_currency'
     ];
 
     /**

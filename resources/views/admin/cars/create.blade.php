@@ -3,79 +3,94 @@
 
 @section('content')
         <div class="col-lg-12">
-            <h1>Dodaj nowy rekord</h1>
+            <h1>{{Lang::get('admin/cars.addNewCar')}}</h1>
 
             {!! Form::open(['method'=>'POST', 'action'=>'AdminCarsController@store', 'files'=>true, 'class'=>'form-row']) !!}
 
             <div class="form-group col-md-4">
-                {!! Form::label('brand_id', 'Marka:') !!}
-                {!! Form::select('brand_id', ['' => 'Wybierz'] + $brands, null, ['class'=>'form-control brand-list']) !!}
+                {!! Form::label('brand_id', Lang::get('admin/cars.brand')) !!}
+                {!! Form::select('brand_id', ['' => Lang::get('admin/cars.select')] + $brands, null,
+                ['class'=>'form-control brand-list']) !!}
             </div>
 
 
             <div class="form-group col-md-4">
-                {!! Form::label('model_id', 'Model:') !!}
+                {!! Form::label('model_id', Lang::get('admin/cars.model')) !!}
                 {!! Form::select('model_id', ['' => ''], null, ['class'=>'form-control brand-list']) !!}
             </div>
 
             <div class="form-group col-md-4">
-                {!! Form::label('vin', 'VIN:') !!}
+                {!! Form::label('vin', Lang::get('admin/cars.vin')) !!}
                 {!! Form::text('vin', null, ['class'=>'form-control']) !!}
             </div>
 
             <div class="form-group col-md-2">
-                {!! Form::label('bought_price', 'Cena zakupu:') !!}
-                {!! Form::text('bought_price', null,  ['class'=>'form-control']) !!}
+                {!! Form::label('bought_price', Lang::get('admin/cars.boughtPrice')) !!}
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        {!! Form::text('bought_price', null,  ['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {!! Form::select('bought_currency', $currencies, null, ['class'=>'form-control']) !!}
+                    </div>
+                </div>
             </div>
 
             <div class="form-group col-md-2">
-                {!! Form::label('sold_price', 'Cena sprzedaży:') !!}
-                {!! Form::text('sold_price', null, ['class'=>'form-control']) !!}
+                {!! Form::label('sold_price', Lang::get('admin/cars.sellPrice')) !!}
+                <div class="row">
+                    <div class="col-md-6">
+                        {!! Form::text('sold_price', null, ['class'=>'form-control']) !!}
+                    </div>
+                    <div class="col-md-6">
+                        {!! Form::select('sold_currency', $currencies, null, ['class'=>'form-control']) !!}
+                    </div>
+                </div>
             </div>
 
             <div class="form-group col-md-4">
-                {!! Form::label('from', 'Gdzie zakupiono:') !!}
+                {!! Form::label('from', Lang::get('admin/cars.whereBought')) !!}
                 {!! Form::text('from', null,  ['class'=>'form-control']) !!}
             </div>
 
             <div class="form-group col-md-4">
-                {!! Form::label('offer_id', 'Numer oferty:') !!}
+                {!! Form::label('offer_id', Lang::get('admin/cars.noOffer')) !!}
                 {!! Form::text('offer_id', null,  ['class'=>'form-control']) !!}
             </div>
 
             <div class="form-group col-md-4">
-                {!! Form::label('customer_id', 'Komu sprzedano:') !!}
+                {!! Form::label('customer_id', Lang::get('admin/cars.whoBought')) !!}
                 {{ Form::text('customer_id', '', ['id' => 'customer_id', 'class'=>'form-control'])}}
             </div>
 
             <div class="form-group col-md-2">
-                {!! Form::label('bought_date', 'Data zakupu:') !!}
+                {!! Form::label('bought_date', Lang::get('admin/cars.boughtDate')) !!}
                 {!! Form::date('bought_date', null,  ['class'=>'form-control']) !!}
             </div>
 
             <div class="form-group col-md-2">
-                {!! Form::label('in_warehouse_date', 'Data przyjęcia:') !!}
+                {!! Form::label('in_warehouse_date', Lang::get('admin/cars.wareouseDate')) !!}
                 {!! Form::date('in_warehouse_date', null,  ['class'=>'form-control']) !!}
             </div>
 
             <div class="form-group col-md-2">
-                {!! Form::label('sold_date', 'Data sprzedaży:') !!}
+                {!! Form::label('sold_date', Lang::get('admin/cars.soldDate')) !!}
                 {!! Form::date('sold_date', null,  ['class'=>'form-control']) !!}
             </div>
 
             <div class="form-group col-md-2">
-                {!! Form::label('left_warehouse_date', 'Data wyjazdu pojazdu:') !!}
+                {!! Form::label('left_warehouse_date', Lang::get('admin/cars.leaveDate')) !!}
                 {!! Form::date('left_warehouse_date', null,  ['class'=>'form-control']) !!}
             </div>
 
             <div class="form-group col-md-12">
-                {!! Form::label('extra', 'Uwagi') !!}
+                {!! Form::label('extra', Lang::get('admin/cars.extraInfo')) !!}
                 {!! Form::textarea('extra', null, ['class'=>'form-control', 'rows'=>3]) !!}
             </div>
 
             <div class="form-group col-md-12">
-                {!! Form::submit('Dodaj pojazd', ['class'=>'btn btn-primary pull-right']) !!}
-                {!! Form::submit('Dodaj pojazd oraz zdjęcia', ['name'=>'pics','class'=>'btn btn-secondary pull-right']) !!}
+                {!! Form::submit(Lang::get('admin/cars.addVehicle'), ['class'=>'btn btn-primary pull-right']) !!}
+                {!! Form::submit(Lang::get('admin/cars.addVehicleAndPic'), ['name'=>'pics','class'=>'btn btn-secondary pull-right']) !!}
             </div>
 
 

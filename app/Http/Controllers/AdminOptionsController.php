@@ -6,6 +6,7 @@ use App\Models\Options;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
+use Swap\Laravel\Facades\Swap;
 
 class AdminOptionsController extends Controller
 {
@@ -21,18 +22,8 @@ class AdminOptionsController extends Controller
         $lastSettings = Options::all() ? Options::all()->last() : null;
         return view('admin.options.index', [
             'currencies' => $currency,
-            'lastSettings' => $lastSettings
+            'lastSettings' => $lastSettings,
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
     }
 
     /**
@@ -43,36 +34,16 @@ class AdminOptionsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['otherCurrency'] = implode(", ",$request->otherCurrency);
-
+        $data['otherCurrency'] = implode(",", $request->otherCurrency);
+        if (substr($data['otherCurrency'], 0, 1) == ',') {
+            $data['otherCurrency'] = substr($data['otherCurrency'], 1);
+        }
         Options::create($data);
 
         Session::flash('msg', Lang::get('admin/options.msgUpdated'));
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -84,8 +55,12 @@ class AdminOptionsController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        if(isset($data['otherCurrency']))
-            $data['otherCurrency'] = implode(", ",$request->otherCurrency);
+        if(isset($data['otherCurrency'])) {
+            $data['otherCurrency'] = implode(",", $request->otherCurrency);
+            if (substr($data['otherCurrency'], 0, 1) == ',') {
+                $data['otherCurrency'] = substr($data['otherCurrency'], 1);
+            }
+        }
 
         Options::findOrFail($id)->update($data);
 

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-lg-12">
-        <h1>Modele i marki</h1>
+        <h1>{{Lang::get('admin/brands.modelsAndBrands')}}</h1>
         <div class="col-md-6 pull-left">
             <h4>Dodaj nową</h4>
                 {!! Form::open(['method'=>'POST', 'action'=>'AdminModelBrandController@store', 'class'=>'form-row']) !!}

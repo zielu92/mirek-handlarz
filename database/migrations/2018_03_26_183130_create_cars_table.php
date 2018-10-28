@@ -19,7 +19,9 @@ class CreateCarsTable extends Migration
             $table->integer('model_id')->index();
             $table->integer('brand_id')->index();
             $table->decimal('bought_price', 12,2)->nullable();
+            $table->char('bought_currency', 3);
             $table->decimal('sold_price', 12,2)->nullable();
+            $table->char('sold_currency', 3);
             $table->string('from')->nullable();
             $table->string('offer_id')->nullable();
             $table->integer('customer_id')->nullable();

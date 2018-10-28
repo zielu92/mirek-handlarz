@@ -476,3 +476,10 @@ footer.sticky-footer {
     width: calc(100% - 55px);
   }
 }
+.otherCurrency {
+  max-height: 40px;
+}
+
+.lastRate {
+  margin-top:8px;
+}

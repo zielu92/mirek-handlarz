@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Options extends Model
 {
-    protected  $fillable = ['defaultCurrency', 'otherCurrency', 'defaultLanguage'];
+    protected  $fillable = ['defaultCurrency', 'otherCurrency', 'ratesOnline', 'defaultLanguage'];
 
     public static function currencyList() {
 

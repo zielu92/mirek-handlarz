@@ -27,7 +27,9 @@ class CarStoreRequest extends FormRequest
             'vin' =>'required',
             'model_id' =>'required',
             'bought_price' =>'required',
-            'bought_date'  =>'required'
+            'bought_date'  =>'required',
+            'sold_currency'=>'required|max:3',
+            'bought_currency'=>'required|max:3'
         ];
     }
 }

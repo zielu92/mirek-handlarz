@@ -27,4 +27,5 @@ return [
     'customers' => 'Klienci',
     'about' => 'O Mirku Handlarzu',
     'options' => 'Ustawienia',
+    'rates' => 'Kursy walut',
 ];
