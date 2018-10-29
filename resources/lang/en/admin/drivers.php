@@ -11,24 +11,23 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'customers' => '{1} Customer|[2,Inf] Customers',
-    'addNewCustomer' => 'Add new customer',
-    'editCustomer' => 'Edit customer profile',
+    'drivers' => '{1} Driver|[2,Inf] Drivers',
+    'addNewDriver' => 'Add new driver',
+    'editDriver' => 'Edit driver profile',
     'name' => 'Name',
     'phone' => 'Phone',
-    'address' => 'Address',
+    'company' => 'Company',
     'extraInfo' => 'Comment',
     'add' => 'Add',
     'save' => 'Save',
     'browse' => 'Browse',
+    'lastTransports' => 'last transports',
     'id' => 'ID',
-    'amountOfVehicles' => 'Amount of vehicles',
-    'lastActivity' => 'Last activity',
-    'vehicle' => 'Vehicle',
-    'sellPrice' => 'Selling price',
-    'profit' => 'Profit',
-    'boughtDate' => 'Purchase date'
-
-
+    'amountOfTransports' => 'Amount of transports',
+    'type' => 'Type',
+    'plates' => 'Registration plates',
+    'date' => 'Date',
+    'action' => 'Action',
+    'details' => 'Details of transport',
 
 ];

@@ -66,8 +66,8 @@
                         @endif
                     </td>
                     <td>{{$car->vin}}</td>
-                    <td>{{$car->bought_price}}</td>
-                    <td>{{$car->sold_price}}</td>
+                    <td>{{$car->bought_price}} {{$car->bought_currency}}</td>
+                    <td>{{$car->sold_price}} {{$car->sold_currency}}</td>
                     <td>{{$car->from}}</td>
                     <td>{{$car->customer ? $car->customer->name : ''}}</td>
                     <td>{{$car->bought_date}}</td>

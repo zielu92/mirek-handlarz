@@ -42,4 +42,17 @@ class Rates extends Model
         }
         return $result;
     }
+
+    /**
+     * Function which generate a collection of setted currencies by user in settings.
+     * @return \Illuminate\Support\Collection
+     */
+    public static function getCurrencyList() {
+        $otherCurrencies = explode(",", Options::get()->first()->otherCurrency);
+        $currencies = collect([['currency'=>Options::get()->first()->defaultCurrency]]);
+        for($j=0; $j<count($otherCurrencies); $j++) {
+            $currencies->push(['currency'=>$otherCurrencies[$j]]);
+        }
+        return $currencies;
+    }
 }

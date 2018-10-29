@@ -214,7 +214,7 @@
                     <p class="timeline__item__content__description">
                         <b>{{$car->model->brand->name}}</b> {{$car->model->model}}<br>
                         {{Lang::get('admin/cars.from')}} {{$car->from}} {{Lang::get('admin/cars.forPrice')}}
-                        <b>{{$car->bought_price}}</b><br>
+                        <b>{{$car->bought_price}} {{$car->bought_currency}}</b><br>
                         {{Lang::get('admin/cars.vin')}}: {{$car->vin}}<br>
                         {{Lang::get('admin/cars.extraInfo')}}:
                         <b>{{$car->extra ? $car->extra : Lang::get('admin/cars.none')}}</b>
@@ -259,7 +259,7 @@
                     </h3>
                     <p class="timeline__item__content__description">
                         {{Lang::get('admin/cars.vehicleBought')}} <b>{{$car->customer->name}}</b>,
-                        {{Lang::get('admin/cars.forPrice')}} <b>{{$car->sold_price}}</b>
+                        {{Lang::get('admin/cars.forPrice')}} <b>{{$car->sold_price}} {{$car->sold_currency}}</b>
                     </p>
                     <div class="timeline__item__content__techs">
                         <span class="icon icon--sketch"></span>

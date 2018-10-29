@@ -9,6 +9,7 @@ use App\Models\Customer;
 use App\Http\Requests\CarStoreRequest;
 use App\Models\Photo;
 use App\Models\Options;
+use App\Models\Rates;
 use App\Models\Transport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -36,14 +37,9 @@ class AdminCarsController extends Controller
      */
     public function create()
     {
-        $otherCurrencies = explode(",", Options::get()->first()->otherCurrency);
-        $currencies = collect([['currency'=>Options::get()->first()->defaultCurrency]]);
-        for($j=0; $j<count($otherCurrencies); $j++) {
-            $currencies->push(['currency'=>$otherCurrencies[$j]]);
-        }
         return view('admin.cars.create', [
             'brands'=> Brand::pluck('name', 'id')->all(),
-            'currencies' => $currencies->pluck('currency', 'currency')->all(),
+            'currencies' => Rates::getCurrencyList()->pluck('currency', 'currency')->all(),
         ]);
     }
 
@@ -143,7 +139,8 @@ class AdminCarsController extends Controller
         return view('admin.cars.edit', [
             'car'=>Car::findOrFail($id),
             'brands'=> Brand::pluck('name', 'id')->all(),
-            'pictures' => Photo::whereCar_id($id)->get()
+            'pictures' => Photo::whereCar_id($id)->get(),
+            'currencies' => Rates::getCurrencyList()->pluck('currency', 'currency')->all(),
         ]);
     }
 

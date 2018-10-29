@@ -29,12 +29,26 @@
 
         <div class="form-group col-md-2">
             {!! Form::label('bought_price', Lang::get('admin/cars.boughtPrice')) !!}
-            {!! Form::text('bought_price', null,  ['class'=>'form-control']) !!}
+            <div class="row">
+                <div class="form-group col-md-6">
+                    {!! Form::text('bought_price', null,  ['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group col-md-6">
+                    {!! Form::select('bought_currency', $currencies, null, ['class'=>'form-control']) !!}
+                </div>
+            </div>
         </div>
 
         <div class="form-group col-md-2">
             {!! Form::label('sold_price', Lang::get('admin/cars.sellPrice')) !!}
-            {!! Form::text('sold_price', null, ['class'=>'form-control']) !!}
+            <div class="row">
+                <div class="col-md-6">
+                    {!! Form::text('sold_price', null, ['class'=>'form-control']) !!}
+                </div>
+                <div class="col-md-6">
+                    {!! Form::select('sold_currency', $currencies, null, ['class'=>'form-control']) !!}
+                </div>
+            </div>
         </div>
 
         <div class="form-group col-md-4">

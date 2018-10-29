@@ -11,24 +11,23 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'customers' => '{1} Klient|[2,Inf] Klienci',
-    'addNewCustomer' => 'Dodaj nowego klienta',
-    'editCustomer' => 'Edytuj profil klienta',
+    'drivers' => '{1} Kierowca|[2,Inf] Kierowcy',
+    'addNewDriver' => 'Dodaj nowego kierowce',
+    'editDriver' => 'Edytuj profil kierowcy',
     'name' => 'Nazwa',
     'phone' => 'Telefon',
-    'address' => 'Adres',
+    'company' => 'Firma',
     'extraInfo' => 'Uwagi',
     'add' => 'Dodaj',
     'save' => 'Zapisz',
     'browse' => 'Przeglądaj',
+    'lastTransports' => 'ostatnie transporty kierowcy',
     'id' => 'ID',
-    'amountOfVehicles' => 'Ilość zak. pojazdów',
-    'lastActivity' => 'Ostatni zakup',
-    'vehicle' => 'Pojazd',
-    'sellPrice' => 'Cena sprzedaży',
-    'profit' => 'Zysk',
-    'boughtDate' => 'Data zakupu'
-
-
+    'amountOfTransports' => 'Ilość transportów',
+    'type' => 'Typ',
+    'plates' => 'Rejestracja',
+    'date' => 'Data',
+    'action' => 'Akcja',
+    'details' => 'Szczegóły transportu',
 
 ];
