@@ -6,8 +6,8 @@
 
 @section('content')
     <div class="col-md-12">
-        <h1>Dodaj zdjęcia dla pojazdu #{{$car->id}} {{$car->model->brand->name}} {{$car->model->model}}</h1>
-        <p>Dodaj zdjęcia przeciągając je w ramkę poniżej</p>
+        <h1>{{Lang::get('admin/media.addPics')}} #{{$car->id}} {{$car->model->brand->name}} {{$car->model->model}}</h1>
+        <p>{{Lang::get('admin/media.addPicByDrag')}}</p>
 
         {!! Form::open(['method'=>'POST', 'action'=>'AdminMediasController@store', 'class'=>'dropzone']) !!}
 
@@ -17,10 +17,14 @@
     </div>
     <br>
     <div class="col-md-12">
-        <a href="{{route('admin.cars.create')}}" class="btn btn-primary pull-left">dodaj następny rekod</a>
+        <a href="{{route('admin.cars.create')}}" class="btn btn-primary pull-left">
+            {{Lang::get('admin/media.addAnotherVehicle')}}
+        </a>
     </div>
     <div class="col-md-12">
-        <a href="{{route('admin.cars.show', $car->id)}}" class="btn btn-secondary pull-left">przejdź do podglądu</a>
+        <a href="{{route('admin.cars.show', $car->id)}}" class="btn btn-secondary pull-left">
+            {{Lang::get('admin/media.goToPreview')}}
+        </a>
     </div>
 @endsection
 
