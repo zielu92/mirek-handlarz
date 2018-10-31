@@ -38,7 +38,6 @@
            Zapraszam do zgłaszania sugesti i bugów - pisałem to 5 dni, póki mi się darmowa licencja na php storma nie skończyła :)
            <br><b>w przyszłości:</b>
             <ul>
-                <li>waluty tranzakcji</li>
                 <li>Panel do wystawiania ogłoszeń</li>
                 <li>Ogłoszenia na stronie głównej</li>
                 <li>Przydzielanie osób odpowiedzialnych za dane auto</li>
