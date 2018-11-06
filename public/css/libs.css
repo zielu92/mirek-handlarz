@@ -500,3 +500,8 @@ footer.sticky-footer {
     column-count: 1;
   }
 }
+
+.editPic {
+  max-width: 650px;
+  max-height: 700px;
+}

@@ -7,6 +7,7 @@ use App\Http\Requests\UserStoreRequired;
 use App\Models\Photo;
 use App\Models\User;
 
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 
 
@@ -19,8 +20,9 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
+
         return view('admin.users.index', [
-            'users' => User::all()
+            'users' => User::paginate(25)
         ]);
     }
 
@@ -57,7 +59,7 @@ class AdminUsersController extends Controller
 
         User::create($data);
 
-        Session::flash('msg', 'Dodano użytkownika');
+        Session::flash('msg', Lang::get('admin/users.userHasBeenAdded'));
 
         return redirect('/admin/users');
     }
@@ -111,7 +113,7 @@ class AdminUsersController extends Controller
 
         $user->update($data);
 
-        Session::flash('returnMsg', 'The user has been updated');
+        Session::flash('returnMsg', Lang::get('admin/users.userHasBeenUpdated'));
 
         return redirect('/admin/users');
     }
@@ -128,7 +130,7 @@ class AdminUsersController extends Controller
 
         $user->delete();
 
-        Session::flash('msg', 'Użytkownik zostal skasowany');
+        Session::flash('msg', Lang::get('admin/users.userHasBeenDeleted'));
 
         return redirect('/admin/users');
     }
