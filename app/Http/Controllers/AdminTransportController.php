@@ -9,6 +9,7 @@ use App\Models\Transport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
 
@@ -24,16 +25,6 @@ class AdminTransportController extends Controller
         return view('admin.transports.index', [
             'transports' => Transport::paginate(15)
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -71,7 +62,7 @@ class AdminTransportController extends Controller
         }
 
         Transport::create($data);
-        Session::flash('msg', 'Dodano nowy transport');
+        Session::flash('msg', Lang::get('admin/transports.addedTransport'));
         return redirect()->back();
     }
 

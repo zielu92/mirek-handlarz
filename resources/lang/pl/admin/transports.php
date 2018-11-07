@@ -33,6 +33,7 @@ return [
     'sellPrice' => 'Cena sprzedaży',
     'boughtDate' => 'Data zakupu',
     'customer' => 'Klient',
+    'addedTransport' => 'Dodano nowy transport',
 
 
 

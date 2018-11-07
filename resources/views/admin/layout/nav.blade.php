@@ -91,7 +91,17 @@
                     <span class="nav-link-text">{{Lang::get('admin/nav.about')}}</span>
                 </a>
             </li>
-
+            <li class="nav-item dropdown line">
+                <form action="Language" method="post" id="langSwitcher">
+                    <div class="form-group">
+                        <select name="locale" onchange='this.form.submit();' class="form-control">
+                            <option value="en" {{ App::getLocale() == 'en' ? ' selected' : '' }}>English</option>
+                            <option value="pl" {{ App::getLocale() == 'pl' ? ' selected' : '' }}>Polski</option>
+                        </select>
+                        {{csrf_field()}}
+                    </div>
+                </form>
+            </li>
         </ul>
 
         <ul class="navbar-nav sidenav-toggler">
@@ -196,7 +206,6 @@
                 <a class="nav-link" href="{{ url('/logout') }}">
                 <i class="fa fa-fw fa-sign-out"></i>{{Lang::get('userForm.logout')}}</a>
             </li>
-
         </ul>
     </div>
 </nav>

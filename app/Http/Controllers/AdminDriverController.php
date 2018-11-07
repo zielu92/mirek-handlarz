@@ -6,6 +6,7 @@ use App\Models\Driver;
 use App\Http\Requests\TransportStoreRequest;
 use App\Models\Transport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 
 class AdminDriverController extends Controller
@@ -31,7 +32,7 @@ class AdminDriverController extends Controller
     public function store(Request $request)
     {
         Driver::create($request->all());
-        Session::flash('msg', 'Dodano nowego kierowce');
+        Session::flash('msg', Lang::get('admin/drivers.addedNewDriver'));
         return redirect()->back();
     }
 
@@ -60,7 +61,7 @@ class AdminDriverController extends Controller
     {
         $driver = Driver::findOrFail($id);
         $driver->update($request->all());
-        Session::flash('msg', 'Zaktualizowano dane kierowcy');
+        Session::flash('msg', Lang::get('admin/drivers.driverUpdated'));
         return redirect()->back();
     }
 

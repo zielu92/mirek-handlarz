@@ -65,7 +65,6 @@ Route::group(['middleware'=>'admin'], function() {
 
     Route::resource('admin/transport', 'AdminTransportController', ['names'=>[
         'index'=>'admin.transport.index',
-        'create'=>'admin.transport.create',
         'store'=>'admin.transport.store',
         'edit'=>'admin.transport.edit',
         'show'=>'admin.transport.show'

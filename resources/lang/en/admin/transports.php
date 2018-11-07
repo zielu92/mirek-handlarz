@@ -33,6 +33,7 @@ return [
     'sellPrice' => 'Selling price',
     'boughtDate' => 'Date of sell',
     'customer' => 'Customer',
+    'addedTransport' => 'New transport has been added',
 
 
 

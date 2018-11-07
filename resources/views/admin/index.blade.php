@@ -10,10 +10,10 @@
                     <div class="card-body-icon">
                         <i class="fa fa-fw fa-truck"></i>
                     </div>
-                    <div class="mr-5"> {{$transports}} transport w przeciągu 7 dni!</div>
+                    <div class="mr-5"> {{$transports}} {{Lang::choice('admin/index.transport', $transports)}}</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="{{route('admin.transport.index')}}">
-                    <span class="float-left">Zobacz</span>
+                    <span class="float-left">{{Lang::get('admin/index.check')}}</span>
                     <span class="float-right">
             <i class="fa fa-angle-right"></i>
           </span>
@@ -26,10 +26,10 @@
                     <div class="card-body-icon">
                         <i class="fa fa-fw fa-car"></i>
                     </div>
-                    <div class="mr-5">{{$carsBought}} zakupionych w przeciągu 7 dni!</div>
+                    <div class="mr-5">{{$carsBought}} {{Lang::choice('admin/index.bought', $carsBought)}}</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="{{route('admin.cars.index')}}">
-                    <span class="float-left">Zobacz</span>
+                    <span class="float-left">{{Lang::get('admin/index.check')}}</span>
                     <span class="float-right">
             <i class="fa fa-angle-right"></i>
           </span>
@@ -42,10 +42,10 @@
                     <div class="card-body-icon">
                         <i class="fa fa-fw fa-dollar"></i>
                     </div>
-                    <div class="mr-5">{{$carsSold}} sprzedanych w przeciągu 7 dni!</div>
+                    <div class="mr-5">{{$carsSold}} {{Lang::choice('admin/index.sold', $carsSold)}}</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="{{route('admin.cars.index')}}">
-                    <span class="float-left">Zobacz</span>
+                    <span class="float-left">{{Lang::get('admin/index.check')}}</span>
                     <span class="float-right">
             <i class="fa fa-angle-right"></i>
           </span>
@@ -58,10 +58,10 @@
                     <div class="card-body-icon">
                         <i class="fa fa-fw fa-frown-o"></i>
                     </div>
-                    <div class="mr-5">{{$notSold}} niesprzedanych w przeciągu 7 dni!</div>
+                    <div class="mr-5">{{$notSold}} {{Lang::choice('admin/index.notSold', $notSold)}}</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="{{route('admin.cars.index')}}">
-                    <span class="float-left">Zobacz</span>
+                    <span class="float-left">{{Lang::get('admin/index.check')}}</span>
                     <span class="float-right">
             <i class="fa fa-angle-right"></i>
           </span>
@@ -70,45 +70,45 @@
         </div>
     </div>
     <!-- buy sell chart-->
-    <div class="card mb-3">
+    <div class="card mb-2">
         <div class="card-header">
-            <i class="fa fa-area-chart"></i> Sprzedaż/Zakup</div>
+            <i class="fa fa-area-chart"></i> {{Lang::get('admin/index.buy')}}/{{Lang::get('admin/index.sell')}}
+        </div>
         <div class="card-body">
             <canvas id="buySell" width="100%" height="30"></canvas>
         </div>
-        <div class="card-footer small text-muted">Na dzień {{ date('d-m-Y') }}</div>
+        <div class="card-footer small text-muted">{{ date('d-m-Y') }}</div>
     </div>
 
         <!-- car status chart-->
-    <div class="card mb-3">
+    <div class="card mb-2">
         <div class="card-header">
-            <i class="fa fa-pie-chart"></i> Statusy 100 ostatnich pojazdów</div>
+            <i class="fa fa-pie-chart"></i> {{Lang::get('admin/index.statusOfLastCars')}}
+        </div>
         <div class="card-body">
             <canvas id="statusChart" width="100%" height="30"></canvas>
         </div>
-        <div class="card-footer small text-muted">Na dzień {{ date('d-m-Y') }}</div>
+        <div class="card-footer small text-muted">{{ date('d-m-Y') }}</div>
     </div>
-
 
     <!--  older than 30 days and not sold table -->
     <div class="card mb-3">
         <div class="card-header">
-            <i class="fa fa-table" id="neverSold"></i> Pojazdy, starze niż 30 dni nadal pozostają niesprzedane lub nigdy
-            nieprzybyły do magazynu</div>
+            <i class="fa fa-table" id="neverSold"></i> {{Lang::get('admin/index.problematicsVehicles')}}</div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-sm table-striped">
                     <thead class="thead-light">
                     <tr>
                         <th>#</th>
-                        <th>Pojazd</th>
-                        <th>VIN</th>
-                        <th>Cena zakupu</th>
-                        <th>Cena sprzedaży</th>
-                        <th>Zakupiono</th>
-                        <th>Data zakupu</th>
-                        <th>Data przyjęcia</th>
-                        <th>Akcje</th>
+                        <th>{{Lang::get('admin/index.vehicle')}}</th>
+                        <th>{{Lang::get('admin/index.vin')}}</th>
+                        <th>{{Lang::get('admin/index.buyingPrice')}}</th>
+                        <th>{{Lang::get('admin/index.sellingPrice')}}</th>
+                        <th>{{Lang::get('admin/index.boughten')}}</th>
+                        <th>{{Lang::get('admin/index.buyingDate')}}</th>
+                        <th>{{Lang::get('admin/index.warehouseDate')}}</th>
+                        <th>{{Lang::get('admin/index.action')}}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -129,7 +129,13 @@
                                 <td>{{$carns->from}}</td>
                                 <td>{{$carns->bought_date}}</td>
                                 <td>{{$carns->in_warehouse_date}}</td>
-                                <td><a href="{{route('admin.cars.edit',$carns->id)}}">Edytuj</a></td>
+                                <td><a href="{{route('admin.cars.edit',$carns->id)}}" class="btn btn-info">
+                                        {{Lang::get('admin/index.edit')}}
+                                    </a>
+                                    <a href="{{route('admin.cars.show',$carns->id)}}" class="btn btn-primary">
+                                        {{Lang::get('admin/index.browse')}}
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                     @endif
@@ -156,7 +162,7 @@
                     data: [@foreach($soldBought as $dataChart)
                         {{$dataChart['sold'].','}}
                         @endforeach],
-                    label: "kupno",
+                    label: "{{Lang::get('admin/index.buy')}}",
                     borderColor: "#287ecd",
                     backgroundColor: "rgba(81, 125, 214, 0.4)",
                     fill: true
@@ -164,7 +170,7 @@
                     data: [@foreach($soldBought as $dataChart)
                         {{$dataChart['bought'].','}}
                         @endforeach],
-                    label: "Sprzedaż",
+                    label: "{{Lang::get('admin/index.sell')}}",
                     borderColor: "#28a745",
                     backgroundColor: "rgba(46,201,79,0.4)",
                     fill: true
@@ -172,9 +178,15 @@
                 ]
             },
             options: {
+                legend: {
+                    labels: {
+                        fontSize: 16,
+                    }
+                },
                 title: {
                     display: true,
-                    text: 'Sprzedaż oraz kupna auta w przeciągu ostatnich 7 dni'
+                    text: "{{Lang::get('admin/index.buySellfromLaast')}}",
+                    fontSize:20,
                 },
                 scales: {
                     xAxes: [{
@@ -190,7 +202,7 @@
                         },
                         scaleLabel: {
                             display: true,
-                            labelString: 'ilość aut',
+                            labelString: "{{Lang::get('admin/index.amoutOfCars')}}",
                             fontSize: 20
                         }
                     }]
@@ -202,19 +214,22 @@
         new Chart(document.getElementById("statusChart"), {
             type: 'pie',
             data: {
-                labels: ["Zakupiony", "Na magazynie", "Sprzedany", "Sprzedany, ale brak na magazynie",
-                    "Sprzedany i wydany", "Starszy niż 30 dni i niesprzedany"],
+                labels: ["{{Lang::get('admin/index.boughten')}}", "{{Lang::get('admin/index.warehouse')}}",
+                    "{{Lang::get('admin/index.solden')}}", "{{Lang::get('admin/index.soldNotWarehouse')}}",
+                    "{{Lang::get('admin/index.soldAndReleased')}}", "{{Lang::get('admin/index.oldStllNotSold')}}"],
                 datasets: [{
-                    label: "Population (millions)",
                     backgroundColor: ["#3e95cd", "#8e5ea2","#41c483","#e8ac31","#00ba1b","#bc000f"],
                     data: [{{$status['status1'].','.$status['status2'].','.$status['status3'].','.
                     $status['status4'].','.$status['status5'].','.$status['status6']}}]
                 }]
             },
             options: {
-                title: {
+                legend: {
                     display: true,
-                    text: 'Statusy 100 ostatnio dodanych pojazdów'
+                    position: 'left',
+                    labels: {
+                        fontSize: 18,
+                    }
                 }
             }
         });

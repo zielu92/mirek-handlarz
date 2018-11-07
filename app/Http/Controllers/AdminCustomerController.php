@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 
 class AdminCustomerController extends Controller
@@ -31,7 +32,7 @@ class AdminCustomerController extends Controller
     {
         Customer::create($request->all());
 
-        Session::flash('msg', 'Dodano nowego klienta');
+        Session::flash('msg', Lang::get('admin/customers.addedNewCustomer'));
         return redirect()->back();
     }
 
@@ -63,7 +64,7 @@ class AdminCustomerController extends Controller
 
         $customer->update($request->all());
 
-        Session::flash('msg', 'Zaktualizowano klienta');
+        Session::flash('msg', Lang::get('admin/customers.customerUpdated'));
         return redirect()->back();
     }
 

@@ -27,7 +27,9 @@ return [
     'vehicle' => 'Vehicle',
     'sellPrice' => 'Selling price',
     'profit' => 'Profit',
-    'boughtDate' => 'Purchase date'
+    'boughtDate' => 'Purchase date',
+    'addedNewCustomer' => 'New custommer has been added',
+    'customerUpdated' => 'Customer profile has been updated',
 
 
 

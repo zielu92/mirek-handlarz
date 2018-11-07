@@ -29,5 +29,7 @@ return [
     'date' => 'Data',
     'action' => 'Akcja',
     'details' => 'Szczegóły transportu',
+    'addedNewDriver' => 'Dodano nowego kierowce',
+    'driverUpdated' => 'Profil kierowcy został aktualizowany',
 
 ];

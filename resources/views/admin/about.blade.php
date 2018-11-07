@@ -32,24 +32,27 @@
 @section('content')
     <div class="content">
         <div class="title m-b-md">
-            Mirek handlarz v1.0
+            {{Lang::get('about.about')}}
+        </div>
+        <div class="m-b-md col-md-6 offset-md-3">
+            {{Lang::get('about.infoAbout')}}
         </div>
         <div class="m-b-md">
-           Zapraszam do zgłaszania sugesti i bugów - pisałem to 5 dni, póki mi się darmowa licencja na php storma nie skończyła :)
-           <br><b>w przyszłości:</b>
+            <b>{{Lang::get('about.future')}}:</b>
             <ul>
-                <li>Panel do wystawiania ogłoszeń</li>
-                <li>Ogłoszenia na stronie głównej</li>
-                <li>Przydzielanie osób odpowiedzialnych za dane auto</li>
-                <li>Panel ustawień</li>
-                <li>Tłumaczenie na angielski</li>
+                <li>{{Lang::get('about.future1')}}</li>
+                <li>{{Lang::get('about.future2')}}</li>
+                <li>{{Lang::get('about.future3')}}</li>
             </ul>
+            <br>
+            {{Lang::get('about.infoSuggestion')}}
         </div>
 
         <div class="links">
-            <a href="http://mzielinski.pl">Strona autora</a>
+            <a href="http://mzielinski.pl">{{Lang::get('about.authorPage')}}</a>
+            <a href="https://www.paypal.me/zielu92">PayPal</a>
             <a href="https://github.com/zielu92/mirek-handlarz">GitHub</a>
-            <a href="https://github.com/laravel/laravel">based on Laravel</a>
+            <a href="https://github.com/laravel/laravel">{{Lang::get('about.based')}}</a>
         </div>
     </div>
 @endsection

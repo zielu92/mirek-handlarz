@@ -27,7 +27,10 @@ return [
     'vehicle' => 'Pojazd',
     'sellPrice' => 'Cena sprzedaży',
     'profit' => 'Zysk',
-    'boughtDate' => 'Data zakupu'
+    'boughtDate' => 'Data zakupu',
+    'addedNewCustomer' => 'Dodano nowego klienta',
+    'customerUpdated' => 'Zaktualizowano profil klienta',
+
 
 
 

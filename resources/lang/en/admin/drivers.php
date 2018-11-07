@@ -29,5 +29,9 @@ return [
     'date' => 'Date',
     'action' => 'Action',
     'details' => 'Details of transport',
+    'addedNewDriver' => 'New driver has been added',
+    'driverUpdated' => 'Driver profile has been updated',
+
+
 
 ];
