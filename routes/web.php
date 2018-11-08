@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/Language', array(
+Route::post('/Language', [
    'Middleware'=>'LanguageSwitch',
    'uses'=>'LanguageController@index'
-    ));
+    ]);
 
 Auth::routes();
 

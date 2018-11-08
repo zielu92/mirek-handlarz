@@ -63,6 +63,8 @@
                 {{ Form::text('customer_id', '', ['id' => 'customer_id', 'class'=>'form-control'])}}
             </div>
 
+            <input type="hidden" id="lang" vale="{{Config::get('app.locale')}}">
+
             <div class="form-group col-md-2">
                 {!! Form::label('bought_date', Lang::get('admin/cars.boughtDate')) !!}
                 {!! Form::date('bought_date', null,  ['class'=>'form-control']) !!}
@@ -141,5 +143,7 @@
                 }
             });
         });
+
+        $( "#bought_date" ).datetimepicker({locale: '{{Config::get('app.locale')}}' });
     </script>
 @endsection
