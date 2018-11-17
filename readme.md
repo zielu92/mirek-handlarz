@@ -13,7 +13,8 @@ CMS Mirek Handlarz is complete tool for car dealers. Using Mirek Handlarz you ca
   <li>Support two languages Polish and English</li>
 </ul>
 <h3>Installation</h3>	
-	soon
+	<a href="https://medium.com/laravel-news/the-simple-guide-to-deploy-laravel-5-application-on-shared-hosting-1a8d0aee923e">
+	Read more about laravel app deployment</a>
 	<br><br>
 <b>Seeds</b><br>
 	After installation and generate new key, please seed basics informations by command 
@@ -40,7 +41,9 @@ Funkcje:
   <li>Wsparcie dla języka polskiego oraz angielskiego</li>
 </ul>
 <h3>Instalacja</h3>
-Wkrótrce<br>
+<a href="https://medium.com/laravel-news/the-simple-guide-to-deploy-laravel-5-application-on-shared-hosting-1a8d0aee923e">
+Informacje na temat deploymentu apki laravelowej</a>
+<br>
 <b>Seed</b><br>
 Po instalacji  i wygenerowaniu klucza należy użyć seeda, aby dodać podstawowe informację do bazy danych<br>
 <code>php artisan db:seed</code><br>
@@ -49,6 +52,7 @@ Pierwszy zarejestrowany użytkownik jest super adminem<br>
 
 <h2>Screenshot</h2>
 <img src="https://github.com/zielu92/mirek-handlarz/blob/master/screenshots/mirek.png">
-
+<br><br>
+<b>Based on Laravel</a>
 <br>  <br>
 Dzięki <a href="https://github.com/jakubthedeveloper">@jakubthedeveloper</a> za rady i porady :) <br><br>
