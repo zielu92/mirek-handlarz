@@ -144,6 +144,6 @@
             });
         });
 
-        $( "#bought_date" ).datetimepicker({locale: '{{Config::get('app.locale')}}' });
+        $( "input[type=date]" ).datetimepicker({locale: '{{Config::get('app.locale')}}' });
     </script>
 @endsection
