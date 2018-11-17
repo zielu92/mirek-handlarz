@@ -12,7 +12,6 @@ CMS Mirek Handlarz is complete tool for car dealers. Using Mirek Handlarz you ca
   <li>Currency rates</li>
   <li>Support two languages Polish and English</li>
 </ul>
-<br>
 <h3>Installation</h3>	
 	soon
 	<br><br>
@@ -40,7 +39,6 @@ Funkcje:
   <li>Kursy walut</li>
   <li>Wsparcie dla języka polskiego oraz angielskiego</li>
 </ul>
-<br>
 <h3>Instalacja</h3>
 Wkrótrce<br>
 <b>Seed</b><br>
@@ -50,7 +48,7 @@ Po instalacji  i wygenerowaniu klucza należy użyć seeda, aby dodać podstawow
 Pierwszy zarejestrowany użytkownik jest super adminem<br>
 
 <h2>Screenshot</h2>
-<img src="http://mzielinski.pl/portfolio/images/mirek/mirek7.png">
+<img src="https://github.com/zielu92/mirek-handlarz/blob/master/screenshots/mirek.png">
 
 <br>  <br>
 Dzięki <a href="https://github.com/jakubthedeveloper">@jakubthedeveloper</a> za rady i porady :) <br><br>
