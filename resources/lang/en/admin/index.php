@@ -25,7 +25,7 @@ return [
     'boughten' => 'Bought',
     'warehouse' => 'Warehouse',
     'solden' => 'Sold',
-    'soldNotWarehouse' => 'Sold, but didn\'t came to warehouse yet',
+    'soldNotWarehouse' => "Sold, but didn't came to warehouse yet",
     'soldAndReleased' => 'Sold and released',
     'oldStllNotSold' => 'Older than 30 days and unsold',
     'problematicsVehicles' => 'Vehicles older than 30 days still unsold or never came to warehouse',

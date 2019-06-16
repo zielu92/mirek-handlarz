@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Carbon\Carbon;
 use Closure;
 use App;
 use Illuminate\Support\Facades\Session;
@@ -9,6 +10,9 @@ use Illuminate\Support\Facades\Config;
 
 class LanguageSwitch
 {
+
+    protected $languages = ['en','pl'];
+
     /**
      * Handle an incoming request.
      *
@@ -18,7 +22,8 @@ class LanguageSwitch
      */
     public function handle($request, Closure $next)
     {
-        App::setLocale(Session::has('locale') ? Session::get('locale') : Config::get('app.locale'));
+        app()->setLocale(Session::has('locale') ? Session::get('locale') : Config::get('app.locale'));
+        Carbon::setLocale(Session::has('locale') ? Session::get('locale') : Config::get('app.locale'));
         return $next($request);
     }
 }

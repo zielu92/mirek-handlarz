@@ -27,6 +27,7 @@ class AdminCarsController extends Controller
      */
     public function index()
     {
+        //test comment
         return view('admin.cars.index',['cars'=>Car::paginate(25)]);
     }
 

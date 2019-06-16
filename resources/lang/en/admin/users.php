@@ -11,7 +11,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'users' => '{1} User|[2,Inf] Uusers',
+    'users' => '{1} User|[2,Inf] Users',
     'addNew' => 'Add user',
     'name' => 'Login',
     'email' => 'Email',

@@ -22,10 +22,17 @@ class User extends Authenticatable
      */
     protected $hidden = ['password', 'remember_token'];
 
-   public function isAdmin() {
-       return $this->is_admin==1 ? true : false;
-}
+    /**
+     * checking if admin is an admin
+     * @return bool
+     */
+    public function isAdmin() {
+        return $this->is_admin==1 ? true : false;
+    }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function photo() {
         return $this->belongsTo('App\Models\Photo');
     }
