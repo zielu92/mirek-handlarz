@@ -24,6 +24,6 @@ return [
     'agriculturalMachine' => 'Maszyna rolnicza',
     'other'               => 'Inne',
     'edit'                => 'Edytuj',
-    ''=>'',
+    'add'                 => 'Dodaj',
 
 ];

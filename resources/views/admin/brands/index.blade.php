@@ -7,32 +7,34 @@
             <h4>Dodaj nową</h4>
                 {!! Form::open(['method'=>'POST', 'action'=>'AdminModelBrandController@store', 'class'=>'form-row']) !!}
                     <div class="form-group col-md-6">
-                        {!! Form::label('brand_id', 'Wybierz z listy lub') !!}
+                        {!! Form::label('brand_id', Lang::get('admin/brands.choiceFromList')) !!}
                         {!! Form::select('brand_id',  $brand, null, ['class'=>'form-control brand-list']) !!}
                     </div>
                     <div class="form-group col-md-6">
-                        {!! Form::label('name', 'podaj nazwę') !!}
+                        {!! Form::label('name', Lang::get('admin/brands.giveName')) !!}
                         {!! Form::text('name', null, ['class'=>'form-control']) !!}
                     </div>
 
                     <div class="form-group col-md-6">
-                        {!! Form::label('model', 'model') !!}
+                        {!! Form::label('model', Lang::get('admin/brands.model')) !!}
                         {!! Form::text('model', null, ['class'=>'form-control']) !!}
                     </div>
 
                     <div class="form-group col-md-6">
-                        {!! Form::label('mode_code', 'skrócona nazwa') !!}
+                        {!! Form::label('mode_code', Lang::get('admin/brands.shortName')) !!}
                         {!! Form::text('mode_code', null, ['class'=>'form-control']) !!}
                     </div>
 
                     <div class="form-group col-md-6">
-                        {!! Form::label('type', 'typ') !!}
-                        {!! Form::select('type', [ '1' => 'Samochód', '2'=>'Motocykl', '3'=>'Rower',
-                        '4'=>'Maszyna rolnicza', '5'=>'Inne'], null, ['class'=>'form-control']) !!}
+                        {!! Form::label('type', Lang::get('admin/brands.type')) !!}
+                        {!! Form::select('type', [ '1' => Lang::get('admin/brands.car'),
+                        '2'=>Lang::get('admin/brands.motorbike'), '3'=>Lang::get('admin/brands.bike'),
+                        '4'=>Lang::get('admin/brands.agriculturalMachine'),
+                        '5'=>Lang::get('admin/brands.other')], null, ['class'=>'form-control']) !!}
                     </div>
 
                     <div class="form-grop col-md-12">
-                        {!! Form::submit('Dodaj', ['class'=>'btn btn-primary pull-right']) !!}
+                        {!! Form::submit(Lang::get('admin/brands.add'), ['class'=>'btn btn-primary pull-right']) !!}
                     </div>
 
                 {!! Form::close() !!}

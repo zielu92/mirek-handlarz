@@ -24,6 +24,6 @@ return [
     'agriculturalMachine' => 'Agricultural machine',
     'other' => 'Other',
     'edit' => 'Edit',
-    ''=>'',
+    'add'=>'Add',
 
 ];
