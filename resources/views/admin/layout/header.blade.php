@@ -32,4 +32,4 @@
 
 </head>
 
-<body class="sidenav-toggled" id="page-top">
+<body class="" id="page-top">
