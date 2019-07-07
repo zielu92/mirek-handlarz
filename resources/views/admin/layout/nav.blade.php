@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="{{route('admin')}}">{{Lang::get('admin/nav.PA')}}</a>
+    <a class="navbar-brand" href="{{route('admin')}}">{{Options::getPageName()}}  {{Lang::get('admin/nav.PA')}}</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -91,6 +91,7 @@
                     <span class="nav-link-text">{{Lang::get('admin/nav.about')}}</span>
                 </a>
             </li>
+            @if(Options::isMultiLanguage())
             <li class="nav-item dropdown line">
                 <form action="/Language" method="post" id="langSwitcher">
                     <div class="form-group">
@@ -102,6 +103,7 @@
                     </div>
                 </form>
             </li>
+            @endif
         </ul>
 
         <ul class="navbar-nav sidenav-toggler">

@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{Options::getPageName()}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -66,17 +66,19 @@
                                 </div>
                             </li>
                         @endguest
-                        <li class="nav-item dropdown line">
-                            <form action="Language" method="post" id="langSwitcher">
-                                <div class="form-group">
-                                    <select name="locale" onchange='this.form.submit();' class="form-control">
-                                        <option value="en" {{ App::getLocale() == 'en' ? ' selected' : '' }}>English</option>
-                                        <option value="pl" {{ App::getLocale() == 'pl' ? ' selected' : '' }}>Polski</option>
-                                    </select>
-                                    {{csrf_field()}}
-                                </div>
-                            </form>
-                        </li>
+                        @if(Options::isMultiLanguage())
+                            <li class="nav-item dropdown line">
+                                <form action="Language" method="post" id="langSwitcher">
+                                    <div class="form-group">
+                                        <select name="locale" onchange='this.form.submit();' class="form-control">
+                                            <option value="en" {{ App::getLocale() == 'en' ? ' selected' : '' }}>English</option>
+                                            <option value="pl" {{ App::getLocale() == 'pl' ? ' selected' : '' }}>Polski</option>
+                                        </select>
+                                        {{csrf_field()}}
+                                    </div>
+                                </form>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>

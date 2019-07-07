@@ -91,15 +91,17 @@
                         <a href="{{ route('login') }}">{{Lang::get('userForm.login')}}</a>
                         <a href="{{ route('register') }}">{{Lang::get('userForm.register')}}</a>
                     @endauth
-                        <form action="Language" method="post" id="langSwitcher">
-                            <div class="input-group">
-                                <select name="locale" onchange='this.form.submit();' class="">
-                                    <option value="en" {{ App::getLocale() == 'en' ? ' selected' : '' }}>English</option>
-                                    <option value="pl" {{ App::getLocale() == 'pl' ? ' selected' : '' }}>Polski</option>
-                                </select>
-                                {{csrf_field()}}
-                            </div>
-                        </form>
+                        @if(Options::isMultiLanguage())
+                            <form action="Language" method="post" id="langSwitcher">
+                                <div class="input-group">
+                                    <select name="locale" onchange='this.form.submit();' class="">
+                                        <option value="en" {{ App::getLocale() == 'en' ? ' selected' : '' }}>English</option>
+                                        <option value="pl" {{ App::getLocale() == 'pl' ? ' selected' : '' }}>Polski</option>
+                                    </select>
+                                    {{csrf_field()}}
+                                </div>
+                            </form>
+                        @endif
                 </div>
             @endif
 

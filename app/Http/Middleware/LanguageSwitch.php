@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Options;
 use Carbon\Carbon;
 use Closure;
 use App;
