@@ -38,6 +38,15 @@ class Options extends Model
     }
 
     /**
+     * Checking if user want to auto-update currency
+     * @return bool
+     */
+    public static function isRatesOnline() {
+        $lastSettings = Options::all() ? Options::all()->last() : null;
+        return $lastSettings->ratesOnline==1 ? true : false;
+    }
+
+    /**
      * Getting name of page
      * @return mixed
      */

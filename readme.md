@@ -35,6 +35,9 @@ CMS Mirek Handlarz is complete tool for car dealers. Using Mirek Handlarz you ca
 	<br>
 	<code>php artisan db:seed</code>
 	<br>
+	<h4>Cronjobs</h4>
+	For auto currency update, you have to add cronjobs task. Example:<br>
+	<code>* * * * * php /home/master/applications/mirek    /public_html/artisan currency:update >> /dev/null 2>&1</code>
 <h4>Administrator</h4><br>
 	First registered user is a Super Admin
 		
@@ -60,6 +63,9 @@ Informacje na temat deploymentu apki laravelowej</a>
 <h4>Seed</h4><br>
 Po instalacji  i wygenerowaniu klucza należy użyć seeda, aby dodać podstawowe informację do bazy danych<br>
 <code>php artisan db:seed</code><br>
+<h4>Cronjobs</h4>
+Warto dodać sobie cronjobs, jeśli chcemy auto update walut. Przykładwy kod wywołujący update:<br>
+<code>* * * * * php /home/master/applications/mirek    /public_html/artisan currency:update >> /dev/null 2>&1</code>
 <h4>Administrator</h4><br>
 Pierwszy zarejestrowany użytkownik jest super adminem<br>
 

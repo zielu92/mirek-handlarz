@@ -84,8 +84,7 @@
                     </label>
                 </div>
                 <div class="col-lg-1">
-                    {!! Form::radio('ratesOnline', 1, 1, ['id' => 'ratesOnlineYes', 'class'=>'form-check-input',
-                    'disabled'])  !!}
+                    {!! Form::radio('ratesOnline', 1, 1, ['id' => 'ratesOnlineYes', 'class'=>'form-check-input'])  !!}
                     <label class="form-check-label" for="ratesOnlineYes">
                         {{ Lang::get('admin/options.ratesOnlineYes')}}
                     </label>

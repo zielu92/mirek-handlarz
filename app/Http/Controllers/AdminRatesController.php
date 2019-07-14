@@ -8,7 +8,6 @@ use App\Models\Rates;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
-use Swap\Laravel\Facades\Swap;
 
 class AdminRatesController extends Controller
 {
