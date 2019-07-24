@@ -30,6 +30,7 @@ class CreateCarsTable extends Migration
             $table->date('sold_date')->nullable();
             $table->date('left_warehouse_date')->nullable();
             $table->text('extra')->nullable();
+            $table->integer('adviser_id')->nullable();
             $table->timestamps();
         });
     }

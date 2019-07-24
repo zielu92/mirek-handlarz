@@ -39,4 +39,5 @@ return [
     'multiLanguage' => 'Wsparcie dla wielu języków na stronie?',
     'yes' => 'Tak',
     'no' => 'Nie',
+    'adviser'=>'Przypisuj doradców do aut'
 ];

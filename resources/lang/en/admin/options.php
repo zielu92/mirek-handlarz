@@ -39,4 +39,5 @@ return [
     'multiLanguage' => 'Support Multi language webpage',
     'yes' => 'Yes',
     'no' => 'No',
+    'adviser'=>'Assign an advisers to car'
 ];

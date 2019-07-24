@@ -26,6 +26,7 @@ class CreateOptionsTable extends Migration
             $table->text('defaultLanguage')->nullable();
             $table->boolean('multiLanguage')->default(true);
             $table->text('languages')->nullable();
+            $table->text('adviser')->default(false);
             $table->timestamps();
         });
 

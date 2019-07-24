@@ -32,6 +32,22 @@
                 {!! Form::label('logo', Lang::get('admin/options.logo')) !!}
                 {!! Form::file('logo', ['class'=>'form-control']) !!}
             </div>
+            <div class="form-group col-md-4">
+                {!! Form::label('adviser', Lang::get('admin/options.adviser'))  !!}
+                <br>
+                <div class="col-lg-1">
+                    {!! Form::radio('adviser', 1, 1, ['class'=>'form-check-input'])  !!}
+                    <label class="form-check-label" for="ratesOnlineYes">
+                        {{ Lang::get('admin/options.ratesOnlineYes')}}
+                    </label>
+                </div>
+                <div class="col-lg-1">
+                    {!! Form::radio('adviser', 0, 0, ['class'=>'form-check-input']) !!}
+                    <label class="form-check-label" for="ratesOnlineNo">
+                        {{ Lang::get('admin/options.ratesOnlineNo')}}
+                    </label>
+                </div>
+            </div>
         </div>
         <hr>
         <h2>{{Lang::get('admin/options.page')}}</h2>
