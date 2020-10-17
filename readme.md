@@ -74,4 +74,4 @@ Pierwszy zarejestrowany użytkownik jest super adminem<br>
 <br><br>
 <b>Based on Laravel</a>
 <br>  <br>
-Dzięki <a href="https://github.com/jakubthedeveloper">@jakubthedeveloper</a> za rady i porady :) <br><br>
+Dzięki <a href="https://github.com/jakubthedeveloper">@jakubthedeveloper</a> za rady i porady :) <br><br># autanatak
